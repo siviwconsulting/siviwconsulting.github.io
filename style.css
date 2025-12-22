@@ -1,294 +1,170 @@
-/* --- ГЛОБАЛЬНЫЕ НАСТРОЙКИ --- */
-:root {
-    --bg-color: #0b0d10; /* Очень темный антрацит */
-    --accent-gold: #d4af37;
-    --text-main: #e6e9ed;
-    --text-muted: #94a3b8;
-    --blue-glow: rgba(66, 153, 225, 0.15); /* Холодное свечение */
-}
+/* --- СТИЛИ ДЛЯ PROJECTS PAGE --- */
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    overflow-x: hidden;
-    min-height: 100vh;
-}
-
-/* --- ДИНАМИЧЕСКИЙ ФОН (Aurora Effect) --- */
-.ambient-light {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: 
-        radial-gradient(circle at 15% 50%, rgba(30, 41, 59, 0.4), transparent 50%),
-        radial-gradient(circle at 85% 30%, rgba(20, 30, 45, 0.4), transparent 50%);
-    z-index: -2;
-    animation: pulseBackground 10s infinite alternate;
-}
-
-/* Пробегающая полоса света (сканирование) */
-.scanline {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.03), transparent);
-    background-size: 100% 50%;
-    z-index: -1;
-    animation: scanMove 8s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes pulseBackground {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(1.1); opacity: 0.8; }
-}
-
-@keyframes scanMove {
-    0% { background-position: 0 -100vh; }
-    100% { background-position: 0 200vh; }
-}
-
-/* --- НАВИГАЦИЯ (NAVBAR) --- */
-.navbar {
-    padding: 15px 30px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(11, 13, 16, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-container {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* ГОРИЗОНТАЛЬНОЕ ЛОГО */
-.brand-horizontal {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-logo-icon {
-    height: 40px;
-    width: auto;
-    /* Если у картинки есть белый фон, скругляем её, чтобы выглядело как иконка-кнопка */
-    border-radius: 6px; 
-}
-
-.brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.brand-name {
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    color: #fff;
-}
-
-.brand-sub {
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    color: var(--accent-gold);
-    text-transform: uppercase;
-}
-
-nav a {
-    color: var(--text-muted);
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-nav a:hover { color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.5); }
-
-.contact-btn {
-    border: 1px solid var(--accent-gold);
-    padding: 6px 16px;
-    border-radius: 2px;
-    color: var(--accent-gold) !important;
-}
-
-.contact-btn:hover {
-    background: var(--accent-gold);
-    color: #000 !important;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-}
-
-/* --- HERO SECTION --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.page-header {
+    padding-top: 120px;
+    padding-bottom: 60px;
     text-align: center;
-    position: relative;
-}
-
-/* Логотип по центру с эффектом появления */
-.hero-logo-container {
-    position: relative;
-    margin-bottom: 2rem;
-    animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    opacity: 0;
-    display: inline-block;
-}
-
-.hero-logo-img {
-    width: 150px;
-    /* Легкая тень, чтобы скрыть границы белого фона, если он есть */
-    filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
-    border-radius: 10px; /* Сглаживаем углы картинки */
-}
-
-/* Эффект вспышки за логотипом */
-.light-flash {
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 10px; height: 10px;
-    background: white;
-    box-shadow: 0 0 80px 40px rgba(255,255,255,0.2);
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-    animation: flashEffect 1.5s ease-out forwards;
-    z-index: -1;
-}
-
-@keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes flashEffect {
-    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) scale(20); opacity: 0; }
-}
-
-/* Текст заголовка со свечением */
-.glow-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    font-weight: 300;
-    color: transparent;
-    background: linear-gradient(135deg, #fff 40%, #7d8c9e 100%);
-    -webkit-background-clip: text;
-    margin-bottom: 1rem;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-}
-
-/* Кнопка с металлическим бликом */
-.btn-primary {
-    background: linear-gradient(180deg, #2c3e50, #1a252f);
-    color: #fff;
-    padding: 15px 40px;
-    border-radius: 2px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    border: 1px solid #34495e;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.shimmer-btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: 0.5s;
-}
-
-.shimmer-btn:hover::before {
-    left: 100%;
-}
-
-.shimmer-btn:hover {
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-}
-
-/* --- КАРТОЧКИ --- */
-.info-section {
-    padding: 80px 20px;
-    position: relative;
-    background: linear-gradient(to bottom, #0b0d10, #13161c);
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.glass-panel {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    transition: 0.4s;
-}
-
-.glass-panel:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-}
-
-.glass-panel h3 {
+.page-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
     color: #fff;
-    font-weight: 400;
-    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
-/* Анимации появления */
-.fade-in { opacity: 0; animation: fadeInMove 1s forwards; }
-.fade-in-down { opacity: 0; animation: fadeInDown 0.8s forwards; }
-
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 0.9s; }
-
-@keyframes fadeInMove {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.projects-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 100px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Отступ между проектами */
 }
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Карточка проекта */
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    opacity: 0; /* Скрыто по умолчанию для анимации */
+    transform: translateY(50px);
+    transition: all 1s ease-out;
 }
 
-footer {
-    text-align: center;
-    padding: 50px 0;
-    color: #444;
+/* Класс для активации анимации JS-ом */
+.project-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Реверс для четных проектов (текст слева, фото справа) */
+.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+/* Колонки */
+.project-image-col {
+    flex: 1;
+    position: relative;
+}
+
+.project-text-col {
+    flex: 1;
+}
+
+/* Оформление картинки */
+.img-frame {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease;
+}
+
+.img-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* Эффект зума при наведении */
+.img-frame:hover img {
+    transform: scale(1.05);
+}
+
+.img-frame:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.1);
+}
+
+/* Тег на картинке */
+.overlay-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.8);
+    color: var(--accent-gold);
+    padding: 5px 15px;
     font-size: 0.8rem;
-    border-top: 1px solid #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--accent-gold);
+}
+
+/* Текстовая часть */
+.project-text-col h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.tech-stack {
+    margin-bottom: 30px;
+}
+
+.tech-stack span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+
+/* Сетка Challenge-Solution-Impact */
+.case-study-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.case-item {
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid #333;
+    padding: 15px 20px;
+    transition: 0.3s;
+}
+
+.case-item:hover {
+    background: rgba(255,255,255,0.04);
+    border-left-color: var(--text-main);
+}
+
+/* Выделение блока Impact (Результат) */
+.highlight-item {
+    border-left-color: var(--accent-gold);
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.05), transparent);
+}
+
+.case-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 900px) {
+    .project-card, .reverse-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
 }
