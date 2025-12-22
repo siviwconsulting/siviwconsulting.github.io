@@ -622,3 +622,133 @@ footer {
 @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 @keyframes flashEffect { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 50% { opacity: 0.5; } 100% { transform: translate(-50%, -50%) scale(20); opacity: 0; } }
+
+
+
+/* =========================================
+   13. WORKFLOW & TECH STACK (BUSINESS TRUST)
+   ========================================= */
+
+.section-title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 60px;
+}
+
+/* --- Workflow (Process) --- */
+.workflow-section {
+    padding: 100px 20px;
+    border-top: 1px solid rgba(255,255,255,0.02);
+    background: linear-gradient(to bottom, var(--bg-dark-accent), var(--bg-color));
+}
+
+.workflow-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 4px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.workflow-step:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.05);
+}
+
+.step-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3rem;
+    color: rgba(255,255,255,0.05);
+    font-weight: 700;
+    position: absolute;
+    top: 10px; right: 20px;
+}
+
+.workflow-step:hover .step-number {
+    color: rgba(212, 175, 55, 0.1); /* Золотой при наведении */
+}
+
+.workflow-step h3 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.workflow-step p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.step-arrow {
+    font-size: 2rem;
+    color: var(--glass-border);
+    padding-top: 40px;
+    font-weight: 300;
+}
+
+/* --- Tech Stack --- */
+.tech-section {
+    padding: 80px 20px 120px 20px;
+    text-align: center;
+}
+
+.tech-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tech-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border: 1px solid #333;
+    padding: 10px 25px;
+    border-radius: 4px;
+    background: #0f1115;
+    transition: 0.3s;
+    cursor: default;
+}
+
+.tech-item:hover {
+    border-color: var(--accent-gold);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    transform: scale(1.05);
+}
+
+/* Мобильная адаптация новых блоков */
+@media (max-width: 900px) {
+    .workflow-container { flex-direction: column; align-items: stretch; }
+    .step-arrow { display: none; } /* Скрываем стрелки на мобильном */
+    .workflow-step { margin-bottom: 20px; }
+}
