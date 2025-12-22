@@ -8,10 +8,9 @@
     <link rel="icon" href="Log.jpg" type="image/jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Дополнительный стиль для отладки изображений в превью */
         .img-frame {
-            background-color: #1a1a1a; /* Темный фон, если картинка не загрузилась */
-            min-height: 250px;         /* Фиксированная высота, чтобы верстка не прыгала */
+            background-color: #1a1a1a; 
+            min-height: 250px;         
             display: flex;
             align-items: center;
             justify-content: center;
@@ -20,38 +19,35 @@
 </head>
 <body>
 
-    <!-- Динамический фон -->
     <div class="ambient-light"></div>
     <div class="scanline"></div>
 
-    <!-- Навигация -->
     <header class="navbar">
         <div class="nav-container">
-            <div class="brand-horizontal">
+            <!-- Кликабельное Лого -->
+            <a href="index.html" class="brand-horizontal">
                 <img src="pic.gif" alt="Logo" class="nav-logo-icon">
                 <div class="brand-text">
                     <span class="brand-name">SINITSA</span>
                     <span class="brand-sub">VITAWARE</span>
                 </div>
-            </div>
+            </a>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="projects.html" class="active">Projects</a>
+                <a href="research.html">Research</a>
                 <a href="mailto:siviwconsulting@gmail.com" class="contact-btn">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Заголовок страницы -->
     <section class="page-header fade-in">
         <h1>Engineering Impact</h1>
         <p>Selected case studies demonstrating high-fidelity simulation and data intelligence.</p>
     </section>
 
-    <!-- Список проектов -->
     <div class="projects-wrapper">
 
-        <!-- PROJECT 1 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
@@ -82,7 +78,6 @@
             </div>
         </article>
 
-        <!-- PROJECT 2 -->
         <article class="project-card reveal reverse-layout">
             <div class="project-image-col">
                 <div class="img-frame">
@@ -113,7 +108,6 @@
             </div>
         </article>
 
-        <!-- PROJECT 3 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
@@ -150,7 +144,7 @@
         <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
     </footer>
 
-    <!-- Скрипт анимации при скролле -->
+    <!-- Обновленный скрипт с реверсом -->
     <script>
         const observerOptions = {
             threshold: 0.15 
@@ -160,6 +154,10 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                } else {
+                    // ЭТО ДЕЛАЕТ АНИМАЦИЮ РЕВЕРСИВНОЙ
+                    // Когда элемент уходит с экрана, класс удаляется
+                    entry.target.classList.remove('active');
                 }
             });
         }, observerOptions);
