@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.jpg" type="image/jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительный стиль для отладки изображений в превью */
+        .img-frame {
+            background-color: #1a1a1a; /* Темный фон, если картинка не загрузилась */
+            min-height: 250px;         /* Фиксированная высота, чтобы верстка не прыгала */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -45,7 +55,7 @@
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="1.jpg" alt="Jet Engine Simulation">
+                    <img src="1.png" alt="Jet Engine Simulation">
                     <div class="overlay-tag">Aerospace</div>
                 </div>
             </div>
@@ -76,7 +86,7 @@
         <article class="project-card reveal reverse-layout">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="4.jpg" alt="3D Health Data Mapping">
+                    <img src="4.png" alt="3D Health Data Mapping">
                     <div class="overlay-tag">Data Science</div>
                 </div>
             </div>
@@ -107,7 +117,7 @@
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="8.jpg" alt="Methanol Dosing Shelter">
+                    <img src="8.png" alt="Methanol Dosing Shelter">
                     <div class="overlay-tag">Process Industry</div>
                 </div>
             </div>
