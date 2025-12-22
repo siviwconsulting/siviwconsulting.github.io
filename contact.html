@@ -7,45 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <style>
-        /* Дополнительные стили для гарантии отображения */
-        .executive-card {
-            border: 1px solid #d4af37 !important; /* Золотая тонкая рамка */
-            background: rgba(20, 24, 29, 0.95) !important; /* Плотный темный фон для контейнера */
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15) !important; /* Легкое золотое свечение */
-        }
-        /* Фикс для иконки LinkedIn */
-        .social-icon img {
-            width: 40px !important;
-            height: auto !important;
-        }
-        /* Стили переключателя языков */
-        .lang-switcher {
-            display: inline-flex;
-            gap: 10px;
-            margin-left: 20px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-        }
-        .lang-btn {
-            background: none;
-            border: none;
-            color: #7e8a96; /* text-muted из style.css */
-            cursor: pointer;
-            padding: 2px 5px;
-            transition: color 0.3s, text-shadow 0.3s;
-            font-weight: 500;
-        }
-        .lang-btn:hover, .lang-btn.active {
-            color: #d4af37; /* accent-gold */
-            text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
-        }
-        /* Разделитель */
-        .lang-divider {
-            color: #444;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -66,10 +28,8 @@
                 <a href="projects.html" data-key="nav_projects">Projects</a>
                 <a href="research.html" data-key="nav_research">Research</a>
                 <a href="contact.html" class="active" data-key="nav_contact">Contact</a>
-                
-                <!-- Переключатель языков -->
                 <div class="lang-switcher">
-                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
                     <span class="lang-divider">|</span>
                     <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
                     <span class="lang-divider">|</span>
@@ -81,69 +41,28 @@
 
     <section class="contact-section fade-in">
         <div class="executive-card reveal">
-            
             <div class="card-visual">
                 <div class="img-container">
-                    <img src="profpic1.jpg" alt="Artem V. Sinitsa" class="primary-img">
-                    <img src="profpic2.jpg" alt="Artem V. Sinitsa" class="hover-img">
+                    <img src="profpic1.jpg" alt="Artem Sinitsa" class="primary-img">
+                    <img src="profpic2.jpg" alt="Artem Sinitsa" class="hover-img">
                 </div>
             </div>
-
             <div class="card-details">
                 <div class="card-header">
                     <h1>Artem V. Sinitsa, <span class="degree">PhD</span></h1>
                     <h2 data-key="role">Founder & Lead Consultant</h2>
                     <div class="gold-divider"></div>
                 </div>
-
                 <div class="contact-list">
-                    <div class="contact-item">
-                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="info-text">
-                            <span class="label" data-key="headquarters_label">Headquarters</span>
-                            <span class="value" data-key="headquarters_val">Trieste, Friuli-Venezia Giulia, Italy</span>
-                        </div>
-                    </div>
-
-                    <a href="mailto:siviwconsulting@gmail.com" class="contact-item link-item">
-                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="info-text">
-                            <span class="label" data-key="email_label">Email Inquiries</span>
-                            <span class="value">siviwconsulting@gmail.com</span>
-                        </div>
-                    </a>
-
-                    <a href="tel:+393514955238" class="contact-item link-item">
-                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-                        <div class="info-text">
-                            <span class="label" data-key="phone_label">Direct Line</span>
-                            <span class="value">+39 351 495 52 38</span>
-                        </div>
-                    </a>
-
-                    <a href="https://siviwconsulting.github.io" target="_blank" class="contact-item link-item">
-                        <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
-                        <div class="info-text">
-                            <span class="label" data-key="website_label">Official Website</span>
-                            <span class="value">siviwconsulting.github.io</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="contact-item link-item">
-                        <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
-                        <div class="info-text">
-                            <span class="label" data-key="linkedin_label">Professional Network</span>
-                            <span class="value">Siviw Consulting</span>
-                        </div>
-                    </a>
+                    <div class="contact-item"><div class="icon-box"><i class="fa-solid fa-location-dot"></i></div><div class="info-text"><span class="label" data-key="headquarters_label">Headquarters</span><span class="value" data-key="headquarters_val">Trieste, Italy</span></div></div>
+                    <a href="mailto:siviwconsulting@gmail.com" class="contact-item link-item"><div class="icon-box"><i class="fa-solid fa-envelope"></i></div><div class="info-text"><span class="label" data-key="email_label">Email</span><span class="value">siviwconsulting@gmail.com</span></div></a>
+                    <a href="tel:+393514955238" class="contact-item link-item"><div class="icon-box"><i class="fa-solid fa-phone"></i></div><div class="info-text"><span class="label" data-key="phone_label">Phone</span><span class="value">+39 351 495 52 38</span></div></a>
+                    <a href="https://siviwconsulting.github.io" class="contact-item link-item"><div class="icon-box"><i class="fa-solid fa-globe"></i></div><div class="info-text"><span class="label" data-key="website_label">Website</span><span class="value">siviwconsulting.github.io</span></div></a>
+                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="contact-item link-item"><div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div><div class="info-text"><span class="label" data-key="linkedin_label">LinkedIn</span><span class="value">Siviw Consulting</span></div></a>
                 </div>
-
                 <div class="card-footer">
-                    <div class="vat-info">
-                        <span class="vat-label">P.IVA / VAT ID:</span>
-                        <span class="vat-value">01437440322</span>
-                    </div>
-                    <a href="mailto:siviwconsulting@gmail.com" class="btn btn-primary shimmer-btn" data-key="cta_btn">Initiate Collaboration</a>
+                    <div class="vat-info"><span class="vat-label">P.IVA:</span><span class="vat-value">01437440322</span></div>
+                    <a href="mailto:siviwconsulting@gmail.com" class="btn btn-primary" data-key="cta_btn">Initiate Collaboration</a>
                 </div>
             </div>
         </div>
@@ -169,71 +88,41 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- МУЛЬТИЯЗЫЧНОСТЬ ---
         const translations = {
             en: {
-                nav_home: "Home",
-                nav_projects: "Projects",
-                nav_research: "Research",
-                nav_contact: "Contact",
-                role: "Founder & Lead Consultant",
-                headquarters_label: "Headquarters",
-                headquarters_val: "Trieste, Friuli-Venezia Giulia, Italy",
-                email_label: "Email Inquiries",
-                phone_label: "Direct Line",
-                website_label: "Official Website",
-                linkedin_label: "Professional Network",
-                cta_btn: "Initiate Collaboration"
+                nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
+                role: "Founder & Lead Consultant", headquarters_label: "Headquarters", headquarters_val: "Trieste, Italy",
+                email_label: "Email", phone_label: "Phone", website_label: "Website", linkedin_label: "LinkedIn", cta_btn: "Initiate Collaboration"
             },
             ru: {
-                nav_home: "Главная",
-                nav_projects: "Проекты",
-                nav_research: "Наука",
-                nav_contact: "Контакты",
-                role: "Основатель и Ведущий Консультант",
-                headquarters_label: "Офис / Штаб-квартира",
-                headquarters_val: "Триест, Фриули-Венеция-Джулия, Италия",
-                email_label: "Email для связи",
-                phone_label: "Прямой номер",
-                website_label: "Официальный сайт",
-                linkedin_label: "Профиль LinkedIn",
-                cta_btn: "Начать сотрудничество"
+                nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
+                role: "Основатель и Ведущий Консультант", headquarters_label: "Офис", headquarters_val: "Триест, Италия",
+                email_label: "Email", phone_label: "Телефон", website_label: "Сайт", linkedin_label: "LinkedIn", cta_btn: "Начать сотрудничество"
             },
             it: {
-                nav_home: "Home",
-                nav_projects: "Progetti",
-                nav_research: "Ricerca",
-                nav_contact: "Contatti",
-                role: "Fondatore e Consulente Capo",
-                headquarters_label: "Sede Centrale",
-                headquarters_val: "Trieste, Friuli-Venezia Giulia, Italia",
-                email_label: "Richieste via Email",
-                phone_label: "Linea Diretta",
-                website_label: "Sito Ufficiale",
-                linkedin_label: "Rete Professionale",
-                cta_btn: "Iniziare la Collaborazione"
+                nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
+                role: "Fondatore e Consulente Capo", headquarters_label: "Sede", headquarters_val: "Trieste, Italia",
+                email_label: "Email", phone_label: "Telefono", website_label: "Sito Web", linkedin_label: "LinkedIn", cta_btn: "Iniziare Collaborazione"
             }
         };
 
         function setLanguage(lang) {
-            // Обновляем тексты
+            localStorage.setItem('preferredLanguage', lang);
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
-
-            // Обновляем активность кнопок
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            // Находим кнопку по тексту (простой способ) и активируем
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const btnText = lang.toUpperCase();
             const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent === btnText);
             if (activeBtn) activeBtn.classList.add('active');
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLang);
+        });
     </script>
 
 </body>
