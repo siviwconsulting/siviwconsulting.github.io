@@ -50,7 +50,6 @@
                 </div>
 
                 <div class="contact-list">
-                    
                     <div class="contact-item">
                         <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="info-text">
@@ -115,14 +114,12 @@
     </footer>
 
     <script>
-        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
+                else entry.target.classList.remove('active');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
