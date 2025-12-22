@@ -1,148 +1,268 @@
-/* Базовые настройки */
+/* --- ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ (ЦВЕТОВАЯ ПАЛИТРА) --- */
 :root {
-    --bg-color: #0f1115;
-    --text-color: #e0e0e0;
-    --accent-color: #d4af37; /* Золото как на вашем лого */
-    --secondary-color: #2c3e50;
+    /* Основной фон: Глубокий серо-синий (Gunmetal) */
+    --bg-dark: #121418;
+    --bg-gradient-start: #1b2026;
+    --bg-gradient-end: #0f1114;
+    
+    /* Текст */
+    --text-primary: #e6e9ed; /* Почти белый с холодным оттенком */
+    --text-secondary: #94a3b8; /* Светло-серый металлик */
+    
+    /* Акценты */
+    --accent-gold: #d4af37; /* Ваше золото из логотипа */
+    --metallic-sheen: rgba(255, 255, 255, 0.1);
+    --border-color: #2d3748;
 }
 
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Hero Section */
+/* --- НАВИГАЦИЯ (NAVBAR) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(18, 20, 24, 0.85); /* Полупрозрачность */
+    backdrop-filter: blur(10px); /* Эффект матового стекла */
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-gold);
+}
+
+.contact-link {
+    border: 1px solid var(--accent-gold);
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: var(--accent-gold) !important;
+}
+
+/* --- HERO SECTION --- */
 .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: radial-gradient(circle at center, #1a1d24 0%, #0f1115 100%);
-    padding: 20px;
+    /* Градиент "Стальной синий" */
+    background: radial-gradient(circle at top, #242c36 0%, #0f1114 100%);
+    position: relative;
+    padding-top: 60px;
 }
 
-/* ЛОГОТИП */
+.logo-wrapper {
+    margin-bottom: 20px;
+}
+
 .main-logo {
-    width: 180px; /* Размер логотипа */
+    width: 160px;
     height: auto;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2)); /* Легкое свечение */
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.15));
 }
 
-/* Типографика */
-h1 {
+/* Заголовок с эффектом металла */
+.metallic-text {
+    font-size: 3rem;
     font-weight: 300;
-    font-size: 2.5rem; /* Чуть меньше для мобильных */
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
-    color: #fff;
+    color: transparent;
+    background: linear-gradient(to right, #cfd9df, #e2ebf0, #cfd9df);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
 }
 
-@media (min-width: 768px) {
-    h1 { font-size: 3.5rem; }
+@media (max-width: 768px) {
+    .metallic-text { font-size: 2rem; }
+    .nav-container { flex-direction: column; gap: 10px; }
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: #888;
-    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
     font-weight: 300;
 }
 
-/* Кнопки */
+/* --- КНОПКИ И ЭФФЕКТ СВЕЧЕНИЯ (SHIMMER) --- */
 .buttons-container {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 12px 25px;
+    padding: 14px 35px;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
 .btn-primary {
-    background-color: var(--accent-color);
-    color: #000;
-    font-weight: 600;
+    background: linear-gradient(90deg, #2c3e50, #4b6584);
+    color: #fff;
+    border: 1px solid #566b85;
+}
+
+/* Анимация "пробегающего блика" */
+.shimmer-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    20% { left: 200%; } /* Быстрый проход */
+    100% { left: 200%; } /* Пауза */
 }
 
 .btn-primary:hover {
-    background-color: #f0c445;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 5px 15px rgba(75, 101, 132, 0.4);
 }
 
-.btn-secondary, .btn-outline {
-    background-color: transparent;
-    border: 1px solid #444;
-    color: var(--text-color);
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
 }
 
-.btn-secondary:hover, .btn-outline:hover {
-    border-color: var(--text-color);
-    background-color: rgba(255,255,255,0.05);
+.btn-secondary:hover {
+    border-color: #fff;
+    color: #fff;
 }
 
-/* Анимации */
+/* --- КАРТОЧКИ (Expertise) --- */
+.info-section {
+    padding: 100px 20px;
+    background-color: #121418;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 60px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Эффект матового стекла для карточек */
+.glass-effect {
+    background: rgba(30, 35, 41, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 2px; /* Более строгие углы */
+    transition: all 0.3s ease;
+}
+
+.glass-effect:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    background: rgba(30, 35, 41, 0.9);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 0;
+    font-weight: 500;
+    color: #fff;
+}
+
+p { color: var(--text-secondary); font-size: 0.95rem; }
+
+/* --- FOOTER --- */
+footer {
+    border-top: 1px solid #222;
+    padding: 50px 0;
+    text-align: center;
+    color: #555;
+    background: #0f1114;
+}
+
+.social-links a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+/* --- АНИМАЦИИ ПОЯВЛЕНИЯ --- */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+    animation: fadeInUp 0.8s forwards;
 }
-
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 
 @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* Секции */
-.info-section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.card {
-    background: #16191f;
-    padding: 30px;
-    border-top: 2px solid var(--accent-color);
-    text-align: left;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-h3 { margin-top: 0; color: #fff; }
-
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid #222;
-    color: #555;
-    font-size: 0.8rem;
 }
