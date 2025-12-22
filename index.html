@@ -3,55 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinitsa VitaWare | Advanced Engineering Consulting</title>
+    <title>Sinitsa VitaWare | Computational Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.jpg" type="image/jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <header class="navbar fade-in">
+        <div class="nav-container">
+            <div class="brand">Sinitsa VitaWare</div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="expertise.html">Expertise</a>
+                <a href="projects.html">Case Studies</a>
+                <a href="mailto:siviwconsulting@gmail.com" class="contact-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
     <section class="hero">
-        <div class="content">
-            <div class="logo-container fade-in">
+        <div class="hero-content">
+            <div class="logo-wrapper fade-in">
                 <img src="pic.gif" alt="Sinitsa VitaWare Logo" class="main-logo">
             </div>
 
-            <h1 class="fade-in delay-1">Sinitsa VitaWare Consulting</h1>
+            <h1 class="metallic-text fade-in delay-1">
+                Advanced Numerical Modeling <br> & Digital Twins
+            </h1>
+            
             <p class="subtitle fade-in delay-2">
-                Advanced Numerical Modeling & Digital Twin Frameworks
+                We provide high-fidelity multiphysics simulations and AI-driven analytics <br>
+                to solve complex engineering challenges.
             </p>
 
             <div class="buttons-container fade-in delay-3">
-                <a href="#services" class="btn btn-primary">Our Expertise</a>
-                <a href="#portfolio" class="btn btn-secondary">Case Studies</a>
-                <a href="mailto:siviwconsulting@gmail.com" class="btn btn-outline">Contact Us</a>
+                <a href="projects.html" class="btn btn-primary shimmer-effect">Explore Case Studies</a>
+                <a href="mailto:siviwconsulting@gmail.com" class="btn btn-secondary">Request Consultation</a>
             </div>
         </div>
+        
+        <div class="grid-background"></div>
     </section>
 
-    <section id="services" class="info-section">
-        <h2>Engineering Beyond Limits</h2>
-        <p>We transform complex physical phenomena into actionable insights using high-fidelity simulations.</p>
-        
+    <section class="info-section">
+        <h2 class="section-title">Engineering Intelligence</h2>
         <div class="grid-container">
-            <div class="card">
+            <div class="card glass-effect">
+                <div class="card-icon">⚙️</div>
                 <h3>Multiphysics Simulation</h3>
-                <p>Coupled elasticity, thermal, and fluid dynamics for extreme loads.</p>
+                <p>Coupling FEM, CFD, and thermal dynamics to predict behavior of jet engines and industrial pipelines under extreme loads.</p>
             </div>
-            <div class="card">
+            <div class="card glass-effect">
+                <div class="card-icon">📊</div>
+                <h3>Data Science & AI</h3>
+                <p>Advanced statistical landscapes and non-linear regression to reveal hidden clusters in high-dimensional data.</p>
+            </div>
+            <div class="card glass-effect">
+                <div class="card-icon">🔗</div>
                 <h3>Digital Twins</h3>
-                <p>AI-driven frameworks for predictive maintenance and lifecycle optimization.</p>
-            </div>
-            <div class="card">
-                <h3>Data Analytics</h3>
-                <p>3D statistical health landscapes and nonlinear surface fitting.</p>
+                <p>From mathematical models to operational twins that optimize lifecycle and maintenance costs.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
-        <p class="small">P.IVA: 01437440322</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
+            <p class="vat-id">P.IVA: 01437440322</p>
+            <div class="social-links">
+                <a href="#">LinkedIn</a> | <a href="mailto:siviwconsulting@gmail.com">Email</a>
+            </div>
+        </div>
     </footer>
 
 </body>
