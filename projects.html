@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies | Sinitsa VitaWare</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Log.png" type="image/jpeg">
+    <link rel="icon" href="Log.jpg" type="image/jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         .img-frame {
@@ -24,7 +24,6 @@
 
     <header class="navbar">
         <div class="nav-container">
-            <!-- Кликабельное Лого -->
             <a href="index.html" class="brand-horizontal">
                 <img src="pic.gif" alt="Logo" class="nav-logo-icon">
                 <div class="brand-text">
@@ -36,7 +35,8 @@
                 <a href="index.html">Home</a>
                 <a href="projects.html" class="active">Projects</a>
                 <a href="research.html">Research</a>
-                <a href="mailto:siviwconsulting@gmail.com" class="contact-btn">Contact</a>
+                <!-- ТЕПЕРЬ ВЕДЕТ НА ВИЗИТКУ -->
+                <a href="contact.html" class="contact-btn">Contact</a>
             </nav>
         </div>
     </header>
@@ -48,12 +48,10 @@
 
     <div class="projects-wrapper">
 
-        <!-- PROJECT 1 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <!-- Изменили на .png если так нужно, иначе .jpg -->
-                    <img src="1.png" alt="Jet Engine Simulation">
+                    <img src="1.jpg" alt="Jet Engine Simulation">
                     <div class="overlay-tag">Aerospace</div>
                 </div>
             </div>
@@ -80,11 +78,10 @@
             </div>
         </article>
 
-        <!-- PROJECT 2 -->
         <article class="project-card reveal reverse-layout">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="4.png" alt="3D Health Data Mapping">
+                    <img src="4.jpg" alt="3D Health Data Mapping">
                     <div class="overlay-tag">Data Science</div>
                 </div>
             </div>
@@ -111,11 +108,10 @@
             </div>
         </article>
 
-        <!-- PROJECT 3 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="8.png" alt="Methanol Dosing Shelter">
+                    <img src="8.jpg" alt="Methanol Dosing Shelter">
                     <div class="overlay-tag">Process Industry</div>
                 </div>
             </div>
@@ -148,7 +144,6 @@
         <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
     </footer>
 
-    <!-- Скрипт с реверсом (else remove) -->
     <script>
         const observerOptions = {
             threshold: 0.15 
