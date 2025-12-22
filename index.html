@@ -132,7 +132,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- GLOBAL TRANSLATION LOGIC ---
+        // --- TRANSLATIONS WITH LOCAL STORAGE ---
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
@@ -182,7 +182,7 @@
         };
 
         function setLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang);
+            localStorage.setItem('preferredLanguage', lang); // СОХРАНЯЕМ ВЫБОР
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
@@ -194,11 +194,12 @@
             if (activeBtn) activeBtn.classList.add('active');
         }
 
-        // Загрузка сохраненного языка
+        // ПРИ ЗАГРУЗКЕ ЧИТАЕМ ИЗ ПАМЯТИ
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             setLanguage(savedLang);
         });
     </script>
+
 </body>
 </html>
