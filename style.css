@@ -26,7 +26,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     line-height: 1.6;
-    overflow-x: hidden; /* Скрываем горизонтальную прокрутку */
+    overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -72,8 +72,8 @@ a { text-decoration: none; color: inherit; }
     top: 0;
     width: 100%;
     padding: 15px 0;
-    background: rgba(11, 13, 16, 0.85); /* Полупрозрачный фон */
-    backdrop-filter: blur(12px); /* Эффект матового стекла */
+    background: rgba(11, 13, 16, 0.85);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
 }
@@ -87,17 +87,23 @@ a { text-decoration: none; color: inherit; }
     align-items: center;
 }
 
-/* Логотип в меню (Иконка + Текст) */
+/* Логотип-ссылка */
 .brand-horizontal {
     display: flex;
     align-items: center;
     gap: 12px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.brand-horizontal:hover {
+    opacity: 0.8;
 }
 
 .nav-logo-icon {
     height: 40px;
     width: auto;
-    border-radius: 6px; /* Скругление углов иконки */
+    border-radius: 6px;
 }
 
 .brand-text {
@@ -121,7 +127,7 @@ a { text-decoration: none; color: inherit; }
     text-transform: uppercase;
 }
 
-/* Ссылки меню */
+/* Меню */
 nav a {
     color: var(--text-muted);
     font-size: 0.9rem;
@@ -174,7 +180,6 @@ nav a:hover, nav a.active {
     filter: drop-shadow(0 0 30px rgba(255,255,255,0.05));
 }
 
-/* Вспышка света за логотипом при загрузке */
 .light-flash {
     position: absolute;
     top: 50%; left: 50%;
@@ -187,7 +192,6 @@ nav a:hover, nav a.active {
     z-index: -1;
 }
 
-/* Заголовок со свечением */
 .glow-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
@@ -236,7 +240,6 @@ nav a:hover, nav a.active {
     border: 1px solid #34495e;
 }
 
-/* Эффект пробегающего блика (Shimmer) */
 .shimmer-btn::before {
     content: '';
     position: absolute;
@@ -303,10 +306,10 @@ nav a:hover, nav a.active {
 }
 
 /* =========================================
-   7. PROJECTS PAGE STYLES (Case Studies)
+   7. PROJECTS PAGE & ANIMATION CLASSES
    ========================================= */
 .page-header {
-    padding-top: 140px; /* Отступ от навигации */
+    padding-top: 140px;
     padding-bottom: 60px;
     text-align: center;
     max-width: 800px;
@@ -335,19 +338,23 @@ nav a:hover, nav a.active {
     gap: 120px;
 }
 
-/* Карточка проекта */
+/* АНИМАЦИЯ (Двусторонняя) */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Плавная кривая */
+}
+
+/* Когда класс active добавлен, элемент виден */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .project-card {
     display: flex;
     align-items: flex-start;
     gap: 60px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
-}
-
-.project-card.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .reverse-layout {
@@ -358,7 +365,6 @@ nav a:hover, nav a.active {
     flex: 1;
 }
 
-/* Рамка картинки */
 .img-frame {
     position: relative;
     border-radius: 6px;
@@ -398,7 +404,6 @@ nav a:hover, nav a.active {
     z-index: 2;
 }
 
-/* Текст проекта */
 .project-text-col h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
@@ -421,7 +426,6 @@ nav a:hover, nav a.active {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Сетка "Challenge - Solution - Impact" */
 .case-study-grid {
     display: flex;
     flex-direction: column;
@@ -460,64 +464,7 @@ nav a:hover, nav a.active {
 }
 
 /* =========================================
-   8. FOOTER
-   ========================================= */
-footer {
-    border-top: 1px solid #1a1a1a;
-    padding: 50px 0;
-    text-align: center;
-    color: #444;
-    font-size: 0.8rem;
-    background: var(--bg-color);
-}
-
-/* =========================================
-   9. ANIMATION KEYFRAMES (Helpers)
-   ========================================= */
-.fade-in { opacity: 0; animation: fadeInMove 1s forwards; }
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-
-@keyframes fadeInMove {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes flashEffect {
-    0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) scale(20); opacity: 0; }
-}
-
-/* =========================================
-   10. MOBILE RESPONSIVE
-   ========================================= */
-@media (max-width: 900px) {
-    /* Navbar */
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    /* Hero */
-    .glow-text { font-size: 2.2rem; }
-    
-    /* Projects Page */
-    .project-card, .reverse-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .page-header h1 { font-size: 2rem; }
-}
-/* =========================================
-   11. RESEARCH PAGE STYLES
+   8. RESEARCH PAGE STYLES
    ========================================= */
 
 .research-wrapper {
@@ -534,16 +481,8 @@ footer {
     border: 1px solid var(--glass-border);
     border-radius: 8px;
     padding: 40px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
     position: relative;
     backdrop-filter: blur(10px);
-}
-
-.research-card.active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .research-card:hover {
@@ -551,7 +490,7 @@ footer {
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
-/* Мета-данные (Журнал, DOI) */
+/* Мета-данные */
 .research-meta {
     display: flex;
     justify-content: space-between;
@@ -625,8 +564,6 @@ footer {
     margin: 0 0 10px 0;
 }
 
-.abstract-box p:last-child { margin-bottom: 0; }
-
 .abstract-box strong { color: var(--accent-gold); }
 
 /* Теги */
@@ -644,7 +581,7 @@ footer {
     color: var(--text-muted);
 }
 
-/* Визуальная часть (Скриншот статьи) */
+/* Визуальная часть */
 .research-visual {
     flex: 0.8;
     display: flex;
@@ -672,13 +609,33 @@ footer {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Адаптив для мобильных */
-@media (max-width: 900px) {
-    .research-content {
-        flex-direction: column-reverse;
-    }
-    
-    .research-visual {
-        max-width: 100%;
-    }
+/* =========================================
+   9. FOOTER & MEDIA QUERIES
+   ========================================= */
+footer {
+    border-top: 1px solid #1a1a1a;
+    padding: 50px 0;
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+    background: var(--bg-color);
 }
+
+@media (max-width: 900px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .project-card, .reverse-layout { flex-direction: column; gap: 30px; }
+    .research-content { flex-direction: column-reverse; }
+    .glow-text { font-size: 2.2rem; }
+}
+
+/* Анимации помощники */
+.fade-in { opacity: 0; animation: fadeInMove 1s forwards; }
+.fade-in-down { opacity: 0; animation: fadeInDown 0.8s forwards; }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeInMove { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes flashEffect { 0% { transform: translate(-50%, -50%) scale(0); opacity: 1; } 50% { opacity: 0.5; } 100% { transform: translate(-50%, -50%) scale(20); opacity: 0; } }
