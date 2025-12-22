@@ -6,21 +6,9 @@
     <title>Case Studies | Sinitsa VitaWare</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        .img-frame {
-            background-color: #1a1a1a; 
-            min-height: 250px;         
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="ambient-light"></div>
-    <div class="scanline"></div>
 
     <header class="navbar">
         <div class="nav-container">
@@ -40,129 +28,60 @@
         </div>
     </header>
 
-    <section class="page-header fade-in">
+    <section class="page-header">
         <h1>Engineering Impact</h1>
-        <p>Selected case studies demonstrating high-fidelity simulation and data intelligence.</p>
+        <p>Selected industrial case studies.</p>
     </section>
 
     <div class="projects-wrapper">
-
         <article class="project-card reveal">
-            <div class="project-image-col">
-                <div class="img-frame">
-                    <img src="1.png" alt="Jet Engine Simulation">
-                    <div class="overlay-tag">Aerospace</div>
-                </div>
-            </div>
+            <div class="img-frame"><img src="1.png" alt="Jet Engine"></div>
             <div class="project-text-col">
                 <h2>Thermoelastic Turbine Optimization</h2>
-                <div class="tech-stack">
-                    <span>#FEM</span> <span>#Multiphysics</span> <span>#DigitalTwin</span>
+                <div class="case-item">
+                    <h4>Challenge</h4>
+                    <p>Failure risks in turbine blades under 10k+ RPM thermal loads.</p>
                 </div>
-                
-                <div class="case-study-grid">
-                    <div class="case-item">
-                        <h4>Challenge</h4>
-                        <p>Predicting failure risks in turbine blades under extreme thermal loads (10k+ RPM) where physical testing is cost-prohibitive.</p>
-                    </div>
-                    <div class="case-item">
-                        <h4>Solution</h4>
-                        <p>Developed a coupled thermal-structural FEM model with adaptive meshing (~1M DoF) to simulate stress distributions.</p>
-                    </div>
-                    <div class="case-item highlight-item">
-                        <h4>Impact</h4>
-                        <p>Achieved convergence in <strong>&lt;10 minutes</strong>. Enabled preventive design changes, reducing prototype cycles by 40%.</p>
-                    </div>
+                <div class="case-item">
+                    <h4>Impact</h4>
+                    <p>Convergence in <10 min. Prototype cycles reduced by 40%.</p>
                 </div>
             </div>
         </article>
-
+        
         <article class="project-card reveal reverse-layout">
-            <div class="project-image-col">
-                <div class="img-frame">
-                    <img src="4.png" alt="3D Health Data Mapping">
-                    <div class="overlay-tag">Data Science</div>
-                </div>
-            </div>
+            <div class="img-frame"><img src="4.png" alt="Data Mapping"></div>
             <div class="project-text-col">
-                <h2>Multivariate Health Risk Mapping</h2>
-                <div class="tech-stack">
-                    <span>#Python</span> <span>#UMAP</span> <span>#BigData</span>
+                <h2>Health Data Intelligence</h2>
+                <div class="case-item">
+                    <h4>Challenge</h4>
+                    <p>Revealing hidden risk clusters in high-dimensional datasets.</p>
                 </div>
-
-                <div class="case-study-grid">
-                    <div class="case-item">
-                        <h4>Challenge</h4>
-                        <p>Standard 2D charts failed to reveal hidden correlations and non-linear relationships in complex patient datasets.</p>
-                    </div>
-                    <div class="case-item">
-                        <h4>Solution</h4>
-                        <p>Implemented an AI-driven pipeline using manifold learning (UMAP) and 3D statistical surface fitting.</p>
-                    </div>
-                    <div class="case-item highlight-item">
-                        <h4>Impact</h4>
-                        <p>Identified <strong>hidden high-risk clusters</strong> invisible to traditional methods, enabling targeted medical interventions.</p>
-                    </div>
+                <div class="case-item">
+                    <h4>Solution</h4>
+                    <p>AI-driven manifold learning and 3D surface fitting.</p>
                 </div>
             </div>
         </article>
-
-        <article class="project-card reveal">
-            <div class="project-image-col">
-                <div class="img-frame">
-                    <img src="8.png" alt="Methanol Dosing Shelter">
-                    <div class="overlay-tag">Process Industry</div>
-                </div>
-            </div>
-            <div class="project-text-col">
-                <h2>Digital Twin for Chemical Dosing</h2>
-                <div class="tech-stack">
-                    <span>#CFD</span> <span>#ProcessEngineering</span> <span>#Optimization</span>
-                </div>
-
-                <div class="case-study-grid">
-                    <div class="case-item">
-                        <h4>Challenge</h4>
-                        <p>Preventing corrosion and uneven dosing in methanol injection systems for gas pipelines.</p>
-                    </div>
-                    <div class="case-item">
-                        <h4>Solution</h4>
-                        <p>Created a full 3D Digital Twin of the dosing shelter (12x3x4m) to simulate fluid flow and heat transfer.</p>
-                    </div>
-                    <div class="case-item highlight-item">
-                        <h4>Impact</h4>
-                        <p>Optimized layout for safety and efficiency. Delivered a <strong>virtual testbed</strong> for operational scenarios.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
     </div>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
-                    <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
-                </a>
-            </div>
+        <p>&copy; 2025 Sinitsa VitaWare Consulting.</p>
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
+                <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
+            </a>
         </div>
     </footer>
 
     <script>
-        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    entry.target.classList.remove('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
+                else entry.target.classList.remove('active');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>
