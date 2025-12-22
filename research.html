@@ -6,7 +6,13 @@
     <title>R&D | Sinitsa VitaWare</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        .lang-switcher { display: inline-flex; gap: 8px; margin-left: 20px; align-items: center; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
+        .lang-btn { background: none; border: none; color: #7e8a96; cursor: pointer; padding: 0; transition: color 0.3s; font-weight: 600; font-size: 0.8rem; }
+        .lang-btn:hover, .lang-btn.active { color: #d4af37; }
+        .lang-divider { color: #333; font-size: 0.8rem; }
+    </style>
 </head>
 <body>
 
@@ -23,22 +29,28 @@
                 </div>
             </a>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="research.html" class="active">Research</a>
-                <a href="contact.html" class="contact-btn">Contact</a>
+                <a href="index.html" data-key="nav_home">Home</a>
+                <a href="projects.html" data-key="nav_projects">Projects</a>
+                <a href="research.html" class="active" data-key="nav_research">Research</a>
+                <a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" onclick="setLanguage('it')">IT</button>
+                </div>
             </nav>
         </div>
     </header>
 
     <section class="page-header fade-in">
-        <h1>Scientific Heritage</h1>
-        <p>Grounded in rigorous academic research.</p>
+        <h1 data-key="res_title">Scientific Heritage</h1>
+        <p data-key="res_subtitle">Grounded in rigorous academic research and peer-reviewed mathematical innovations.</p>
     </section>
 
     <div class="research-wrapper">
 
-        <!-- PAPER 1 -->
         <article class="research-card reveal">
             <div class="research-meta">
                 <div class="journal-badge">Int. Comm. Heat & Mass Transfer, 2022</div>
@@ -47,23 +59,17 @@
             
             <div class="research-content">
                 <div class="research-text">
-                    <h2>Exact Estimation of Elasticity Parameters in Thermoelastic Stress Models</h2>
-                    <p class="authors"><strong>Authors:</strong> <span class="me">Artem V. Sinitsa</span>, Antonio Capsoni</p>
+                    <h2 data-key="r1_title">Exact Estimation of Elasticity Parameters in Thermoelastic Stress Models</h2>
+                    <p class="authors"><strong data-key="lbl_authors">Authors:</strong> <span class="me">Artem V. Sinitsa</span>, Antonio Capsoni</p>
                     <div class="abstract-box">
-                        <p>This paper presents a well-posed mathematical model depicting general interconnections between physically governed fields for thermally heated plates.</p>
+                        <p data-key="r1_abstract">This paper presents a well-posed mathematical model depicting general interconnections between physically governed fields for thermally heated plates. The novelty lies in the derivation of exact estimators utilizing variational calculus and fractional order derivatives.</p>
                     </div>
-                    <div class="tags">
-                        <span>Thermoelasticity</span>
-                        <span>Variational Calculus</span>
-                    </div>
+                    <div class="tags"><span>Thermoelasticity</span> <span>Variational Calculus</span></div>
                 </div>
-                <div class="research-visual">
-                    <img src="12.png" alt="Stress Analysis">
-                </div>
+                <div class="research-visual"><img src="12.png" alt="Stress Analysis"></div>
             </div>
         </article>
 
-        <!-- PAPER 2 -->
         <article class="research-card reveal">
             <div class="research-meta">
                 <div class="journal-badge">MDPI Symmetry, 2022</div>
@@ -72,19 +78,14 @@
             
             <div class="research-content">
                 <div class="research-text">
-                    <h2>Analytical Inverse Analysis for Multilayered Medium Terrain</h2>
-                    <p class="authors"><strong>Authors:</strong> Bolatbek Rysbaiuly, <span class="me">Artem Sinitsa</span>, Antonio Capsoni</p>
+                    <h2 data-key="r2_title">Analytical Inverse Analysis for Multilayered Medium Terrain</h2>
+                    <p class="authors"><strong data-key="lbl_authors">Authors:</strong> Bolatbek Rysbaiuly, <span class="me">Artem Sinitsa</span>, Antonio Capsoni</p>
                     <div class="abstract-box">
-                        <p>We demonstrate a novel inverse theory approach for the analytical estimation of thermo-physical properties in multi-layered media.</p>
+                        <p data-key="r2_abstract">We demonstrate a novel inverse theory approach for the analytical estimation of thermo-physical properties in multi-layered media. Using homogenized experimental measurements, we derived exact analytical expressions to determine eight key physical parameters simultaneously.</p>
                     </div>
-                    <div class="tags">
-                        <span>Inverse Problems</span>
-                        <span>Homogenization</span>
-                    </div>
+                    <div class="tags"><span>Inverse Problems</span> <span>Homogenization</span></div>
                 </div>
-                <div class="research-visual">
-                    <img src="14.jpg" alt="Convergence Graph">
-                </div>
+                <div class="research-visual"><img src="14.jpg" alt="Convergence Graph"></div>
             </div>
         </article>
 
@@ -109,6 +110,43 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // --- TRANSLATIONS ---
+        const translations = {
+            en: {
+                nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
+                res_title: "Scientific Heritage", res_subtitle: "Grounded in rigorous academic research and peer-reviewed mathematical innovations.",
+                lbl_authors: "Authors:",
+                r1_title: "Exact Estimation of Elasticity Parameters in Thermoelastic Stress Models", r1_abstract: "This paper presents a well-posed mathematical model depicting general interconnections between physically governed fields for thermally heated plates. The novelty lies in the derivation of exact estimators utilizing variational calculus and fractional order derivatives.",
+                r2_title: "Analytical Inverse Analysis for Multilayered Medium Terrain", r2_abstract: "We demonstrate a novel inverse theory approach for the analytical estimation of thermo-physical properties in multi-layered media. Using homogenized experimental measurements, we derived exact analytical expressions to determine eight key physical parameters simultaneously."
+            },
+            ru: {
+                nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
+                res_title: "Научное Наследие", res_subtitle: "Основано на строгих академических исследованиях и рецензируемых математических инновациях.",
+                lbl_authors: "Авторы:",
+                r1_title: "Точная Оценка Параметров Упругости в Моделях Термоупругого Напряжения", r1_abstract: "Представлена корректная математическая модель, описывающая взаимосвязи между физическими полями для термически нагретых пластин. Новизна заключается в выводе точных оценок с использованием вариационного исчисления.",
+                r2_title: "Аналитический Обратный Анализ для Многослойных Сред", r2_abstract: "Мы демонстрируем новый подход обратной теории для аналитической оценки теплофизических свойств в многослойных средах. Выведены точные аналитические выражения для одновременного определения восьми физических параметров."
+            },
+            it: {
+                nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
+                res_title: "Patrimonio Scientifico", res_subtitle: "Fondato su rigorose ricerche accademiche e innovazioni matematiche peer-reviewed.",
+                lbl_authors: "Autori:",
+                r1_title: "Stima Esatta dei Parametri di Elasticità nei Modelli di Stress Termoelastico", r1_abstract: "Questo articolo presenta un modello matematico ben posto che descrive le interconnessioni generali tra campi fisici per piastre riscaldate termicamente. La novità risiede nella derivazione di stimatori esatti.",
+                r2_title: "Analisi Inversa Analitica per Terreni Multistrato", r2_abstract: "Dimostriamo un nuovo approccio di teoria inversa per la stima analitica delle proprietà termo-fisiche in mezzi multistrato. Sono state derivate espressioni analitiche esatte per determinare simultaneamente otto parametri fisici chiave."
+            }
+        };
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const btnText = lang.toUpperCase();
+            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent === btnText);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
     </script>
 
 </body>
