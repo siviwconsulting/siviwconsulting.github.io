@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Sinitsa VitaWare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Log.jpg" type="image/jpeg">
+    <!-- Подключаем FontAwesome для красивых иконок контактов -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="ambient-light"></div>
+    <div class="scanline"></div>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-horizontal">
+                <img src="pic.gif" alt="Logo" class="nav-logo-icon">
+                <div class="brand-text">
+                    <span class="brand-name">SINITSA</span>
+                    <span class="brand-sub">VITAWARE</span>
+                </div>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="research.html">Research</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section fade-in">
+        <div class="executive-card reveal">
+            
+            <!-- Левая часть: Фото с эффектом смены -->
+            <div class="card-visual">
+                <div class="img-container">
+                    <!-- Основное фото -->
+                    <img src="profpic1.jpg" alt="Artem V. Sinitsa" class="primary-img">
+                    <!-- Фото при наведении (эффект живого присутствия) -->
+                    <img src="profpic2.jpg" alt="Artem V. Sinitsa" class="hover-img">
+                </div>
+            </div>
+
+            <!-- Правая часть: Информация -->
+            <div class="card-details">
+                <div class="card-header">
+                    <h1>Artem V. Sinitsa, <span class="degree">PhD</span></h1>
+                    <h2>Founder & Lead Consultant</h2>
+                    <div class="gold-divider"></div>
+                </div>
+
+                <div class="contact-list">
+                    
+                    <!-- Локация -->
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <span class="label">Headquarters</span>
+                            <span class="value">Trieste, Friuli-Venezia Giulia, Italy</span>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <a href="mailto:siviwconsulting@gmail.com" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-text">
+                            <span class="label">Email Inquiries</span>
+                            <span class="value">siviwconsulting@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <!-- Телефон -->
+                    <a href="tel:+393514955238" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <span class="label">Direct Line</span>
+                            <span class="value">+39 351 495 52 38</span>
+                        </div>
+                    </a>
+
+                    <!-- Сайт -->
+                    <a href="https://siviwconsulting.github.io" target="_blank" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+                        <div class="info-text">
+                            <span class="label">Official Website</span>
+                            <span class="value">siviwconsulting.github.io</span>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="card-footer">
+                    <div class="vat-info">
+                        <span class="vat-label">P.IVA / VAT ID:</span>
+                        <span class="vat-value">01437440322</span>
+                    </div>
+                    <a href="mailto:siviwconsulting@gmail.com" class="btn btn-primary shimmer-btn">Initiate Collaboration</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
