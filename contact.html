@@ -6,8 +6,13 @@
     <title>Contact | Sinitsa VitaWare</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="ambient-light"></div>
+    <div class="scanline"></div>
 
     <header class="navbar">
         <div class="nav-container">
@@ -27,47 +32,99 @@
         </div>
     </header>
 
-    <section class="contact-section">
+    <section class="contact-section fade-in">
         <div class="executive-card reveal">
+            
             <div class="card-visual">
                 <div class="img-container">
-                    <img src="profpic1.jpg" alt="Artem Sinitsa" class="primary-img">
-                    <img src="profpic2.jpg" alt="Artem Sinitsa" class="hover-img">
+                    <img src="profpic1.jpg" alt="Artem V. Sinitsa" class="primary-img">
+                    <img src="profpic2.jpg" alt="Artem V. Sinitsa" class="hover-img">
                 </div>
             </div>
+
             <div class="card-details">
                 <div class="card-header">
-                    <h1>Artem V. Sinitsa, PhD</h1>
+                    <h1>Artem V. Sinitsa, <span class="degree">PhD</span></h1>
                     <h2>Founder & Lead Consultant</h2>
                     <div class="gold-divider"></div>
                 </div>
+
                 <div class="contact-list">
-                    <p>Trieste, Italy</p>
-                    <p>siviwconsulting@gmail.com</p>
-                    <p>+39 351 495 52 38</p>
-                    <p>siviwconsulting.github.io</p>
+                    
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <span class="label">Headquarters</span>
+                            <span class="value">Trieste, Friuli-Venezia Giulia, Italy</span>
+                        </div>
+                    </div>
+
+                    <a href="mailto:siviwconsulting@gmail.com" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-text">
+                            <span class="label">Email Inquiries</span>
+                            <span class="value">siviwconsulting@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+393514955238" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <span class="label">Direct Line</span>
+                            <span class="value">+39 351 495 52 38</span>
+                        </div>
+                    </a>
+
+                    <a href="https://siviwconsulting.github.io" target="_blank" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+                        <div class="info-text">
+                            <span class="label">Official Website</span>
+                            <span class="value">siviwconsulting.github.io</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <div class="info-text">
+                            <span class="label">Professional Network</span>
+                            <span class="value">Siviw Consulting</span>
+                        </div>
+                    </a>
                 </div>
-                <a href="mailto:siviwconsulting@gmail.com" class="btn btn-primary">Initiate Collaboration</a>
+
+                <div class="card-footer">
+                    <div class="vat-info">
+                        <span class="vat-label">P.IVA / VAT ID:</span>
+                        <span class="vat-value">01437440322</span>
+                    </div>
+                    <a href="mailto:siviwconsulting@gmail.com" class="btn btn-primary shimmer-btn">Initiate Collaboration</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-socials">
-            <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
-                <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
-            </a>
+        <div class="footer-content">
+            <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
+                    <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
+                </a>
+            </div>
         </div>
     </footer>
 
     <script>
+        const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-                else entry.target.classList.remove('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
-        }, { threshold: 0.1 });
+        }, observerOptions);
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
