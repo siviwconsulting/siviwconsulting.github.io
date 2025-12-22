@@ -48,10 +48,12 @@
 
     <div class="projects-wrapper">
 
+        <!-- PROJECT 1 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="1.png" alt="Jet Engine Simulation">
+                    <!-- Изменили на .png если так нужно, иначе .jpg -->
+                    <img src="1.jpg" alt="Jet Engine Simulation">
                     <div class="overlay-tag">Aerospace</div>
                 </div>
             </div>
@@ -78,10 +80,11 @@
             </div>
         </article>
 
+        <!-- PROJECT 2 -->
         <article class="project-card reveal reverse-layout">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="4.png" alt="3D Health Data Mapping">
+                    <img src="4.jpg" alt="3D Health Data Mapping">
                     <div class="overlay-tag">Data Science</div>
                 </div>
             </div>
@@ -108,10 +111,11 @@
             </div>
         </article>
 
+        <!-- PROJECT 3 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="8.png" alt="Methanol Dosing Shelter">
+                    <img src="8.jpg" alt="Methanol Dosing Shelter">
                     <div class="overlay-tag">Process Industry</div>
                 </div>
             </div>
@@ -144,7 +148,7 @@
         <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
     </footer>
 
-    <!-- Обновленный скрипт с реверсом -->
+    <!-- Скрипт с реверсом (else remove) -->
     <script>
         const observerOptions = {
             threshold: 0.15 
@@ -155,8 +159,6 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 } else {
-                    // ЭТО ДЕЛАЕТ АНИМАЦИЮ РЕВЕРСИВНОЙ
-                    // Когда элемент уходит с экрана, класс удаляется
                     entry.target.classList.remove('active');
                 }
             });
