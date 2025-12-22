@@ -13,16 +13,16 @@
     <div class="ambient-light"></div>
     <div class="scanline"></div>
 
-    <!-- Навигация -->
     <header class="navbar">
         <div class="nav-container">
-            <div class="brand-horizontal">
+            <!-- Кликабельное лого -->
+            <a href="index.html" class="brand-horizontal">
                 <img src="pic.gif" alt="Logo" class="nav-logo-icon">
                 <div class="brand-text">
                     <span class="brand-name">SINITSA</span>
                     <span class="brand-sub">VITAWARE</span>
                 </div>
-            </div>
+            </a>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="projects.html">Projects</a>
@@ -53,7 +53,6 @@
                     
                     <div class="abstract-box">
                         <p><strong>Abstract:</strong> We demonstrate a novel inverse theory approach for the analytical estimation of thermo-physical properties in multi-layered media. Using homogenized experimental measurements, we derived exact analytical expressions to determine eight key physical parameters simultaneously.</p>
-                        <p>The methodology allows for the decomposition of time-domains into quasi-stationary sub-intervals, overcoming the need for complex adjoint conjugate gradients while maintaining high accuracy.</p>
                     </div>
 
                     <div class="tags">
@@ -63,7 +62,8 @@
                     </div>
                 </div>
                 <div class="research-visual">
-                    <img src="research1.png" alt="Convergence Graph">
+                    <!-- Имя файла из вашего списка -->
+                    <img src="image_16302d.png" alt="Convergence Graph">
                     <div class="caption">Figure: Iterative parameter estimation convergence.</div>
                 </div>
             </div>
@@ -82,8 +82,7 @@
                     <p class="authors"><strong>Authors:</strong> <span class="me">Artem V. Sinitsa</span>, Antonio Capsoni</p>
                     
                     <div class="abstract-box">
-                        <p><strong>Abstract:</strong> This paper presents a well-posed mathematical model depicting general interconnections between physically governed fields for thermally heated plates. We demonstrate the derivation of the conjugate problem and analytical expressions used for exact estimation of structural material properties.</p>
-                        <p>The novelty lies in the derivation of exact estimators utilizing variational calculus and fractional order derivatives, eliminating the need for expensive empirical laboratory sampling.</p>
+                        <p><strong>Abstract:</strong> This paper presents a well-posed mathematical model depicting general interconnections between physically governed fields for thermally heated plates.</p>
                     </div>
 
                     <div class="tags">
@@ -93,7 +92,8 @@
                     </div>
                 </div>
                 <div class="research-visual">
-                    <img src="research2.png" alt="Thermoelastic Stress Analysis">
+                     <!-- Имя файла из вашего списка -->
+                    <img src="image_4a01b2.png" alt="Thermoelastic Stress Analysis">
                     <div class="caption">Figure: Displacement field and stress distribution.</div>
                 </div>
             </div>
@@ -105,12 +105,15 @@
         <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
     </footer>
 
+    <!-- Реверсивная анимация (else remove) -->
     <script>
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
                 }
             });
         }, observerOptions);
