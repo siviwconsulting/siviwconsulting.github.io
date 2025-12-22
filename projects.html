@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies | Sinitsa VitaWare</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Log.jpg" type="image/jpeg">
+    <!-- Исправлено на Log.png -->
+    <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         .img-frame {
@@ -35,7 +36,6 @@
                 <a href="index.html">Home</a>
                 <a href="projects.html" class="active">Projects</a>
                 <a href="research.html">Research</a>
-                <!-- ТЕПЕРЬ ВЕДЕТ НА ВИЗИТКУ -->
                 <a href="contact.html" class="contact-btn">Contact</a>
             </nav>
         </div>
@@ -48,10 +48,12 @@
 
     <div class="projects-wrapper">
 
+        <!-- PROJECT 1 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="1.jpg" alt="Jet Engine Simulation">
+                    <!-- Исправлено на 1.png -->
+                    <img src="1.png" alt="Jet Engine Simulation">
                     <div class="overlay-tag">Aerospace</div>
                 </div>
             </div>
@@ -78,10 +80,12 @@
             </div>
         </article>
 
+        <!-- PROJECT 2 -->
         <article class="project-card reveal reverse-layout">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="4.jpg" alt="3D Health Data Mapping">
+                    <!-- Исправлено на 4.png -->
+                    <img src="4.png" alt="3D Health Data Mapping">
                     <div class="overlay-tag">Data Science</div>
                 </div>
             </div>
@@ -108,10 +112,12 @@
             </div>
         </article>
 
+        <!-- PROJECT 3 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
-                    <img src="8.jpg" alt="Methanol Dosing Shelter">
+                    <!-- Исправлено на 8.png -->
+                    <img src="8.png" alt="Methanol Dosing Shelter">
                     <div class="overlay-tag">Process Industry</div>
                 </div>
             </div>
@@ -145,10 +151,7 @@
     </footer>
 
     <script>
-        const observerOptions = {
-            threshold: 0.15 
-        };
-
+        const observerOptions = { threshold: 0.15 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -158,10 +161,7 @@
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
 </body>
