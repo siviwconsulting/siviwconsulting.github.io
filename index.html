@@ -6,7 +6,13 @@
     <title>Sinitsa VitaWare | Computational Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .lang-switcher { display: inline-flex; gap: 8px; margin-left: 20px; align-items: center; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
+        .lang-btn { background: none; border: none; color: #7e8a96; cursor: pointer; padding: 0; transition: color 0.3s; font-weight: 600; font-size: 0.8rem; }
+        .lang-btn:hover, .lang-btn.active { color: #d4af37; }
+        .lang-divider { color: #333; font-size: 0.8rem; }
+    </style>
 </head>
 <body>
 
@@ -22,12 +28,18 @@
                     <span class="brand-sub">VITAWARE</span>
                 </div>
             </a>
-            
             <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="research.html">Research</a>
-                <a href="contact.html" class="contact-btn">Contact</a>
+                <a href="index.html" class="active" data-key="nav_home">Home</a>
+                <a href="projects.html" data-key="nav_projects">Projects</a>
+                <a href="research.html" data-key="nav_research">Research</a>
+                <a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" onclick="setLanguage('it')">IT</button>
+                </div>
             </nav>
         </div>
     </header>
@@ -38,107 +50,70 @@
                 <div class="light-flash"></div>
                 <img src="pic.gif" alt="Sinitsa VitaWare" class="hero-logo-img">
             </div>
-
-            <h1 class="glow-text fade-in delay-1">
-                Computational Engineering <br> & Digital Intelligence
-            </h1>
-            
-            <p class="subtitle fade-in delay-2">
-                Simulating the invisible. Optimizing the reality.
-            </p>
-
+            <h1 class="glow-text fade-in delay-1" data-key="hero_title">Computational Engineering <br> & Digital Intelligence</h1>
+            <p class="subtitle fade-in delay-2" data-key="hero_subtitle">Simulating the invisible. Optimizing the reality.</p>
             <div class="buttons-container fade-in delay-3">
-                <a href="projects.html" class="btn btn-primary shimmer-btn">View Case Studies</a>
+                <a href="projects.html" class="btn btn-primary shimmer-btn" data-key="hero_btn">View Case Studies</a>
             </div>
         </div>
     </section>
 
-    <!-- ИНФО-БЛОКИ -->
     <section class="info-section">
         <div class="grid-container">
             <div class="glass-panel reveal">
-                <h3>Multiphysics</h3>
-                <p>Coupled FEM/CFD simulations for extreme industrial environments. High-fidelity thermal and structural analysis.</p>
+                <h3 data-key="info_multi_title">Multiphysics</h3>
+                <p data-key="info_multi_text">Coupled FEM/CFD simulations for extreme industrial environments. High-fidelity thermal and structural analysis.</p>
             </div>
             <div class="glass-panel reveal">
-                <h3>Digital Twins</h3>
-                <p>Real-time operational replicas for predictive maintenance. Mathematical frameworks integrated with physical assets.</p>
+                <h3 data-key="info_dt_title">Digital Twins</h3>
+                <p data-key="info_dt_text">Real-time operational replicas for predictive maintenance. Mathematical frameworks integrated with physical assets.</p>
             </div>
             <div class="glass-panel reveal">
-                <h3>Data Analytics</h3>
-                <p>High-dimensional statistical mapping and risk clustering. Reveal hidden patterns in complex technical datasets.</p>
+                <h3 data-key="info_da_title">Data Analytics</h3>
+                <p data-key="info_da_text">High-dimensional statistical mapping and risk clustering. Reveal hidden patterns in complex technical datasets.</p>
             </div>
         </div>
     </section>
 
-    <!-- ROADMAP (ЗОЛОТОЙ ХОВЕР) -->
     <section class="workflow-section reveal">
-        <h2 class="section-title">Partnership Roadmap</h2>
+        <h2 class="section-title" data-key="roadmap_title">Partnership Roadmap</h2>
         <div class="workflow-container">
             <div class="workflow-step">
                 <div class="step-number">01</div>
-                <h3>Discovery</h3>
-                <p>We analyze your technical constraints and define KPIs for the simulation campaign.</p>
+                <h3 data-key="step1_title">Discovery</h3>
+                <p data-key="step1_text">We analyze your technical constraints and define KPIs for the simulation campaign.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="workflow-step">
                 <div class="step-number">02</div>
-                <h3>Modeling</h3>
-                <p>Development of high-fidelity mathematical models (FEM/CFD) and validation against physical data.</p>
+                <h3 data-key="step2_title">Modeling</h3>
+                <p data-key="step2_text">Development of high-fidelity mathematical models (FEM/CFD) and validation against physical data.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="workflow-step">
                 <div class="step-number">03</div>
-                <h3>Optimization</h3>
-                <p>Iterative AI-driven parameter sampling to identify optimal design configurations.</p>
+                <h3 data-key="step3_title">Optimization</h3>
+                <p data-key="step3_text">Iterative AI-driven parameter sampling to identify optimal design configurations.</p>
             </div>
             <div class="step-arrow">→</div>
             <div class="workflow-step">
                 <div class="step-number">04</div>
-                <h3>Handover</h3>
-                <p>Delivery of detailed reports, open-source code, and operational Digital Twins.</p>
+                <h3 data-key="step4_title">Handover</h3>
+                <p data-key="step4_text">Delivery of detailed reports, open-source code, and operational Digital Twins.</p>
             </div>
         </div>
     </section>
 
-    <!-- ЛОГОТИПЫ (ЦВЕТНЫЕ) -->
     <section class="tech-marquee-section reveal">
-        <h2 class="section-title">Technology Ecosystem</h2>
+        <h2 class="section-title" data-key="tech_title">Technology Ecosystem</h2>
         <div class="marquee-container">
             <div class="marquee-track marquee-reverse">
-                <img src="ansys.png" class="tech-logo-item" alt="Ansys">
-                <img src="comsol.jpg" class="tech-logo-item" alt="Comsol">
-                <img src="Dassault_Systèmes_logo.svg.png" class="tech-logo-item" alt="Dassault">
-                <img src="AutoCAD-logo.png" class="tech-logo-item" alt="AutoCAD">
-                <img src="nvidia.png" class="tech-logo-item" alt="Nvidia">
-                <img src="pr-default-gui-cube.png" class="tech-logo-item" alt="ParaView">
-                <img src="tkl.png" class="tech-logo-item" alt="TKL">
-                
-                <img src="ansys.png" class="tech-logo-item" alt="Ansys">
-                <img src="comsol.jpg" class="tech-logo-item" alt="Comsol">
-                <img src="Dassault_Systèmes_logo.svg.png" class="tech-logo-item" alt="Dassault">
-                <img src="AutoCAD-logo.png" class="tech-logo-item" alt="AutoCAD">
-                <img src="nvidia.png" class="tech-logo-item" alt="Nvidia">
-                <img src="pr-default-gui-cube.png" class="tech-logo-item" alt="ParaView">
-                <img src="tkl.png" class="tech-logo-item" alt="TKL">
+                <img src="ansys.png" class="tech-logo-item"><img src="comsol.jpg" class="tech-logo-item"><img src="Dassault_Systèmes_logo.svg.png" class="tech-logo-item"><img src="AutoCAD-logo.png" class="tech-logo-item"><img src="nvidia.png" class="tech-logo-item"><img src="pr-default-gui-cube.png" class="tech-logo-item"><img src="tkl.png" class="tech-logo-item">
+                <img src="ansys.png" class="tech-logo-item"><img src="comsol.jpg" class="tech-logo-item"><img src="Dassault_Systèmes_logo.svg.png" class="tech-logo-item"><img src="AutoCAD-logo.png" class="tech-logo-item"><img src="nvidia.png" class="tech-logo-item"><img src="pr-default-gui-cube.png" class="tech-logo-item"><img src="tkl.png" class="tech-logo-item">
             </div>
-
             <div class="marquee-track marquee-normal">
-                <img src="logo-MATLAB.png" class="tech-logo-item" alt="Matlab">
-                <img src="Wolfram_Alpha_New_Logo.svg.png" class="tech-logo-item" alt="Wolfram">
-                <img src="pythorch.png" class="tech-logo-item" alt="PyTorch">
-                <img src="tens.png" class="tech-logo-item" alt="TensorFlow">
-                <img src="Elsevier.svg.png" class="tech-logo-item" alt="Elsevier">
-                <img src="NASDAQ_Logo.svg.png" class="tech-logo-item" alt="Nasdaq">
-                <img src="GitHub-Logo.png" class="tech-logo-item" alt="GitHub">
-
-                <img src="logo-MATLAB.png" class="tech-logo-item" alt="Matlab">
-                <img src="Wolfram_Alpha_New_Logo.svg.png" class="tech-logo-item" alt="Wolfram">
-                <img src="pythorch.png" class="tech-logo-item" alt="PyTorch">
-                <img src="tens.png" class="tech-logo-item" alt="TensorFlow">
-                <img src="Elsevier.svg.png" class="tech-logo-item" alt="Elsevier">
-                <img src="NASDAQ_Logo.svg.png" class="tech-logo-item" alt="Nasdaq">
-                <img src="GitHub-Logo.png" class="tech-logo-item" alt="GitHub">
+                <img src="logo-MATLAB.png" class="tech-logo-item"><img src="Wolfram_Alpha_New_Logo.svg.png" class="tech-logo-item"><img src="pythorch.png" class="tech-logo-item"><img src="tens.png" class="tech-logo-item"><img src="Elsevier.svg.png" class="tech-logo-item"><img src="NASDAQ_Logo.svg.png" class="tech-logo-item"><img src="GitHub-Logo.png" class="tech-logo-item">
+                <img src="logo-MATLAB.png" class="tech-logo-item"><img src="Wolfram_Alpha_New_Logo.svg.png" class="tech-logo-item"><img src="pythorch.png" class="tech-logo-item"><img src="tens.png" class="tech-logo-item"><img src="Elsevier.svg.png" class="tech-logo-item"><img src="NASDAQ_Logo.svg.png" class="tech-logo-item"><img src="GitHub-Logo.png" class="tech-logo-item">
             </div>
         </div>
     </section>
@@ -162,7 +137,67 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
 
+        // --- TRANSLATIONS ---
+        const translations = {
+            en: {
+                nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
+                hero_title: "Computational Engineering <br> & Digital Intelligence",
+                hero_subtitle: "Simulating the invisible. Optimizing the reality.",
+                hero_btn: "View Case Studies",
+                info_multi_title: "Multiphysics", info_multi_text: "Coupled FEM/CFD simulations for extreme industrial environments. High-fidelity thermal and structural analysis.",
+                info_dt_title: "Digital Twins", info_dt_text: "Real-time operational replicas for predictive maintenance. Mathematical frameworks integrated with physical assets.",
+                info_da_title: "Data Analytics", info_da_text: "High-dimensional statistical mapping and risk clustering. Reveal hidden patterns in complex technical datasets.",
+                roadmap_title: "Partnership Roadmap",
+                step1_title: "Discovery", step1_text: "We analyze your technical constraints and define KPIs for the simulation campaign.",
+                step2_title: "Modeling", step2_text: "Development of high-fidelity mathematical models (FEM/CFD) and validation against physical data.",
+                step3_title: "Optimization", step3_text: "Iterative AI-driven parameter sampling to identify optimal design configurations.",
+                step4_title: "Handover", step4_text: "Delivery of detailed reports, open-source code, and operational Digital Twins.",
+                tech_title: "Technology Ecosystem"
+            },
+            ru: {
+                nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
+                hero_title: "Вычислительный Инжиниринг <br> и Цифровой Интеллект",
+                hero_subtitle: "Моделируем невидимое. Оптимизируем реальность.",
+                hero_btn: "Смотреть Кейсы",
+                info_multi_title: "Мультифизика", info_multi_text: "Сопряженное FEM/CFD моделирование для экстремальных промышленных условий. Высокоточный термический и структурный анализ.",
+                info_dt_title: "Цифровые Двойники", info_dt_text: "Операционные реплики реального времени для предиктивного обслуживания. Математические фреймворки, интегрированные с активами.",
+                info_da_title: "Анализ Данных", info_da_text: "Многомерное статистическое картирование и кластеризация рисков. Выявление скрытых паттернов в сложных данных.",
+                roadmap_title: "Дорожная Карта",
+                step1_title: "Открытие", step1_text: "Анализ ваших технических ограничений и определение KPI для кампании моделирования.",
+                step2_title: "Моделирование", step2_text: "Разработка высокоточных математических моделей (FEM/CFD) и валидация на физических данных.",
+                step3_title: "Оптимизация", step3_text: "Итеративная выборка параметров с помощью ИИ для поиска оптимальных конфигураций.",
+                step4_title: "Передача", step4_text: "Предоставление подробных отчетов, открытого кода и работающих Цифровых Двойников.",
+                tech_title: "Технологическая Экосистема"
+            },
+            it: {
+                nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
+                hero_title: "Ingegneria Computazionale <br> & Intelligenza Digitale",
+                hero_subtitle: "Simulare l'invisibile. Ottimizzare la realtà.",
+                hero_btn: "Vedi Casi Studio",
+                info_multi_title: "Multifisica", info_multi_text: "Simulazioni FEM/CFD accoppiate per ambienti industriali estremi. Analisi termica e strutturale ad alta fedeltà.",
+                info_dt_title: "Digital Twins", info_dt_text: "Repliche operative in tempo reale per la manutenzione predittiva. Framework matematici integrati con asset fisici.",
+                info_da_title: "Analisi Dati", info_da_text: "Mappatura statistica ad alta dimensione e clustering dei rischi. Rivela pattern nascosti in dataset tecnici complessi.",
+                roadmap_title: "Roadmap della Partnership",
+                step1_title: "Scoperta", step1_text: "Analizziamo i vostri vincoli tecnici e definiamo i KPI per la campagna di simulazione.",
+                step2_title: "Modellazione", step2_text: "Sviluppo di modelli matematici ad alta fedeltà (FEM/CFD) e convalida rispetto ai dati fisici.",
+                step3_title: "Ottimizzazione", step3_text: "Campionamento iterativo dei parametri guidato dall'IA per identificare configurazioni ottimali.",
+                step4_title: "Consegna", step4_text: "Consegna di report dettagliati, codice open-source e Digital Twins operativi.",
+                tech_title: "Ecosistema Tecnologico"
+            }
+        };
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const btnText = lang.toUpperCase();
+            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent === btnText);
+            if (activeBtn) activeBtn.classList.add('active');
+        }
+    </script>
 </body>
 </html>
