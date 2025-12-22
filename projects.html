@@ -10,9 +10,11 @@
 </head>
 <body>
 
+    <!-- Динамический фон -->
     <div class="ambient-light"></div>
     <div class="scanline"></div>
 
+    <!-- Навигация -->
     <header class="navbar">
         <div class="nav-container">
             <div class="brand-horizontal">
@@ -30,13 +32,16 @@
         </div>
     </header>
 
+    <!-- Заголовок страницы -->
     <section class="page-header fade-in">
         <h1>Engineering Impact</h1>
         <p>Selected case studies demonstrating high-fidelity simulation and data intelligence.</p>
     </section>
 
+    <!-- Список проектов -->
     <div class="projects-wrapper">
 
+        <!-- PROJECT 1 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
@@ -67,6 +72,7 @@
             </div>
         </article>
 
+        <!-- PROJECT 2 -->
         <article class="project-card reveal reverse-layout">
             <div class="project-image-col">
                 <div class="img-frame">
@@ -97,6 +103,7 @@
             </div>
         </article>
 
+        <!-- PROJECT 3 -->
         <article class="project-card reveal">
             <div class="project-image-col">
                 <div class="img-frame">
@@ -133,9 +140,10 @@
         <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
     </footer>
 
+    <!-- Скрипт анимации при скролле -->
     <script>
         const observerOptions = {
-            threshold: 0.15 // Анимация срабатывает, когда 15% элемента видно
+            threshold: 0.15 
         };
 
         const observer = new IntersectionObserver((entries) => {
