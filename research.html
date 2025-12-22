@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <style>
-        .lang-switcher { display: inline-flex; gap: 8px; margin-left: 20px; align-items: center; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 15px; }
-        .lang-btn { background: none; border: none; color: #7e8a96; cursor: pointer; padding: 0; transition: color 0.3s; font-weight: 600; font-size: 0.8rem; }
-        .lang-btn:hover, .lang-btn.active { color: #d4af37; }
-        .lang-divider { color: #333; font-size: 0.8rem; }
-    </style>
 </head>
 <body>
 
@@ -34,7 +28,7 @@
                 <a href="research.html" class="active" data-key="nav_research">Research</a>
                 <a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a>
                 <div class="lang-switcher">
-                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
                     <span class="lang-divider">|</span>
                     <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
                     <span class="lang-divider">|</span>
@@ -111,7 +105,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- TRANSLATIONS ---
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
@@ -137,6 +130,7 @@
         };
 
         function setLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
@@ -147,6 +141,11 @@
             const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent === btnText);
             if (activeBtn) activeBtn.classList.add('active');
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            setLanguage(savedLang);
+        });
     </script>
 
 </body>
