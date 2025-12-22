@@ -6,11 +6,14 @@
     <title>Sinitsa VitaWare | Computational Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="navbar">
+    <div class="ambient-light"></div>
+    <div class="scanline"></div>
+
+    <header class="navbar fade-in-down">
         <div class="nav-container">
             <a href="index.html" class="brand-horizontal">
                 <img src="pic.gif" alt="Logo" class="nav-logo-icon">
@@ -19,6 +22,7 @@
                     <span class="brand-sub">VITAWARE</span>
                 </div>
             </a>
+            
             <nav>
                 <a href="index.html" class="active">Home</a>
                 <a href="projects.html">Projects</a>
@@ -30,16 +34,27 @@
 
     <section class="hero">
         <div class="hero-content">
-            <img src="pic.gif" alt="Sinitsa VitaWare" class="hero-logo-img">
-            <h1 class="glow-text">Computational Engineering <br>& Digital Intelligence</h1>
-            <p class="subtitle">Simulating the invisible. Optimizing the reality.</p>
-            <div class="buttons-container">
+            <!-- Анимационный контейнер для логотипа -->
+            <div class="hero-logo-container">
+                <div class="light-flash"></div> <!-- Вспышка -->
+                <img src="pic.gif" alt="Sinitsa VitaWare" class="hero-logo-img">
+            </div>
+
+            <h1 class="glow-text fade-in delay-1">
+                Computational Engineering <br> & Digital Intelligence
+            </h1>
+            
+            <p class="subtitle fade-in delay-2">
+                Simulating the invisible. Optimizing the reality.
+            </p>
+
+            <div class="buttons-container fade-in delay-3">
                 <a href="projects.html" class="btn btn-primary shimmer-btn">View Case Studies</a>
             </div>
         </div>
     </section>
 
-    <!-- ОСНОВНЫЕ БЛОКИ СРАЗУ ПОСЛЕ HERO -->
+    <!-- Сразу идут блоки экспертизы -->
     <section class="info-section">
         <div class="grid-container">
             <div class="glass-panel reveal">
@@ -57,39 +72,74 @@
         </div>
     </section>
 
-    <section class="workflow-section">
+    <section class="workflow-section reveal">
         <h2 class="section-title">Partnership Roadmap</h2>
         <div class="workflow-container">
-            <div class="workflow-step reveal">
+            <div class="workflow-step">
                 <div class="step-number">01</div>
                 <h3>Discovery</h3>
-                <p>Analyzing technical constraints and defining KPIs for the project.</p>
+                <p>We analyze your technical constraints and define KPIs for the simulation campaign.</p>
             </div>
-            <div class="workflow-step reveal">
+            <div class="step-arrow">→</div>
+            <div class="workflow-step">
                 <div class="step-number">02</div>
                 <h3>Modeling</h3>
-                <p>Development of FEM/CFD models validated against physical data.</p>
+                <p>Development of high-fidelity mathematical models (FEM/CFD) and validation against physical data.</p>
             </div>
-            <div class="workflow-step reveal">
+            <div class="step-arrow">→</div>
+            <div class="workflow-step">
                 <div class="step-number">03</div>
                 <h3>Optimization</h3>
-                <p>Iterative parameter sampling to identify optimal configurations.</p>
+                <p>Iterative AI-driven parameter sampling to identify optimal design configurations.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="workflow-step">
+                <div class="step-number">04</div>
+                <h3>Handover</h3>
+                <p>Delivery of detailed reports, open-source code, and operational Digital Twins.</p>
             </div>
         </div>
     </section>
 
-    <section class="tech-marquee-section">
-        <div class="marquee-track">
-            <img src="ansys.png" class="tech-logo-item" alt="Ansys">
-            <img src="comsol.jpg" class="tech-logo-item" alt="Comsol">
-            <img src="nvidia.png" class="tech-logo-item" alt="Nvidia">
-            <img src="logo-MATLAB.png" class="tech-logo-item" alt="Matlab">
-            <img src="AutoCAD-logo.png" class="tech-logo-item" alt="AutoCAD">
-            <img src="GitHub-Logo.png" class="tech-logo-item" alt="GitHub">
-            <img src="ansys.png" class="tech-logo-item" alt="Ansys">
-            <img src="comsol.jpg" class="tech-logo-item" alt="Comsol">
-            <img src="nvidia.png" class="tech-logo-item" alt="Nvidia">
-            <img src="logo-MATLAB.png" class="tech-logo-item" alt="Matlab">
+    <!-- Бегущая строка (цветные логотипы) -->
+    <section class="tech-marquee-section reveal">
+        <h2 class="section-title">Technology Ecosystem</h2>
+        <div class="marquee-container">
+            <div class="marquee-track marquee-reverse">
+                <img src="ansys.png" class="tech-logo-item" alt="Ansys">
+                <img src="comsol.jpg" class="tech-logo-item" alt="Comsol">
+                <img src="Dassault_Systèmes_logo.svg.png" class="tech-logo-item" alt="Dassault">
+                <img src="AutoCAD-logo.png" class="tech-logo-item" alt="AutoCAD">
+                <img src="nvidia.png" class="tech-logo-item" alt="Nvidia">
+                <img src="pr-default-gui-cube.png" class="tech-logo-item" alt="ParaView">
+                <img src="tkl.png" class="tech-logo-item" alt="TKL">
+                
+                <img src="ansys.png" class="tech-logo-item" alt="Ansys">
+                <img src="comsol.jpg" class="tech-logo-item" alt="Comsol">
+                <img src="Dassault_Systèmes_logo.svg.png" class="tech-logo-item" alt="Dassault">
+                <img src="AutoCAD-logo.png" class="tech-logo-item" alt="AutoCAD">
+                <img src="nvidia.png" class="tech-logo-item" alt="Nvidia">
+                <img src="pr-default-gui-cube.png" class="tech-logo-item" alt="ParaView">
+                <img src="tkl.png" class="tech-logo-item" alt="TKL">
+            </div>
+
+            <div class="marquee-track marquee-normal">
+                <img src="logo-MATLAB.png" class="tech-logo-item" alt="Matlab">
+                <img src="Wolfram_Alpha_New_Logo.svg.png" class="tech-logo-item" alt="Wolfram">
+                <img src="pythorch.png" class="tech-logo-item" alt="PyTorch">
+                <img src="tens.png" class="tech-logo-item" alt="TensorFlow">
+                <img src="Elsevier.svg.png" class="tech-logo-item" alt="Elsevier">
+                <img src="NASDAQ_Logo.svg.png" class="tech-logo-item" alt="Nasdaq">
+                <img src="GitHub-Logo.png" class="tech-logo-item" alt="GitHub">
+
+                <img src="logo-MATLAB.png" class="tech-logo-item" alt="Matlab">
+                <img src="Wolfram_Alpha_New_Logo.svg.png" class="tech-logo-item" alt="Wolfram">
+                <img src="pythorch.png" class="tech-logo-item" alt="PyTorch">
+                <img src="tens.png" class="tech-logo-item" alt="TensorFlow">
+                <img src="Elsevier.svg.png" class="tech-logo-item" alt="Elsevier">
+                <img src="NASDAQ_Logo.svg.png" class="tech-logo-item" alt="Nasdaq">
+                <img src="GitHub-Logo.png" class="tech-logo-item" alt="GitHub">
+            </div>
         </div>
     </section>
 
@@ -113,5 +163,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
