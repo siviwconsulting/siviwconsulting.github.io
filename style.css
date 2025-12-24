@@ -62,7 +62,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================================
-   3. NAVIGATION & LANG SWITCHER
+   3. NAVIGATION
    ========================================= */
 .navbar {
     position: fixed; top: 0; width: 100%; padding: 15px 0;
@@ -168,13 +168,20 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .shimmer-btn:hover::before { left: 200%; transition: 0.7s; }
 .shimmer-btn:hover { border-color: var(--accent-gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.15); transform: translateY(-2px); }
 
-/* Стиль для кнопки бронирования (Calendly) */
+/* КНОПКА БРОНИРОВАНИЯ (CALENDLY) */
 .btn-book {
     background: var(--accent-gold);
     color: #0b0c10;
-    border: none;
+    border: 1px solid var(--accent-gold);
     font-weight: 700;
-    display: inline-block; /* Важно для <a> тега */
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 .btn-book:hover {
     background: #e5bd45;
@@ -184,7 +191,7 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 }
 
 /* =========================================
-   5. CONTAINER STYLES (CARDS)
+   5. CONTAINER STYLES
    ========================================= */
 .glass-panel, .workflow-step, .project-card, .research-card, .executive-card {
     background-color: var(--card-bg) !important;
@@ -196,12 +203,8 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
     position: relative;
 }
 
-/* Золотой ховер/актив для всех карточек */
-.glass-panel:hover, .glass-panel:active,
-.workflow-step:hover, .workflow-step:active,
-.project-card:hover, .project-card:active,
-.research-card:hover, .research-card:active,
-.executive-card:hover, .executive-card:active {
+.glass-panel:hover, .workflow-step:hover, .project-card:hover, .research-card:hover, .executive-card:hover,
+.glass-panel:active, .workflow-step:active, .project-card:active, .research-card:active, .executive-card:active {
     border-color: var(--accent-gold);
     box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 20px rgba(212, 175, 55, 0.15);
     transform: translateY(-5px);
@@ -220,7 +223,7 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .workflow-container { display: flex; justify-content: center; align-items: flex-start; max-width: 1200px; margin: 0 auto; gap: 20px; flex-wrap: wrap; }
 .workflow-step { flex: 1; min-width: 250px; padding: 30px; }
 .step-number { font-family: 'JetBrains Mono', monospace; font-size: 3rem; color: rgba(255,255,255,0.05); font-weight: 700; position: absolute; top: 10px; right: 20px; transition: 0.3s; }
-.workflow-step:hover .step-number, .workflow-step:active .step-number { color: rgba(212, 175, 55, 0.15); }
+.workflow-step:hover .step-number { color: rgba(212, 175, 55, 0.15); }
 .workflow-step h3 { color: #fff; font-family: 'Montserrat', sans-serif; margin-top: 10px; font-size: 1.2rem; }
 .workflow-step p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; }
 .step-arrow { font-size: 2rem; color: var(--glass-border); padding-top: 40px; font-weight: 300; }
@@ -240,7 +243,7 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .project-image-col, .project-text-col { flex: 1; }
 .img-frame { position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--glass-border); background: #000; }
 .img-frame img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
-.img-frame:hover img, .img-frame:active img { transform: scale(1.03); }
+.img-frame:hover img { transform: scale(1.03); }
 .overlay-tag { position: absolute; top: 20px; left: 20px; background: rgba(20, 22, 27, 0.9); color: var(--accent-gold); padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; border: 1px solid var(--accent-gold); z-index: 2; }
 .project-text-col h2, .research-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #fff; margin-top: 0; margin-bottom: 15px; }
 
@@ -266,10 +269,10 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .abstract-box:hover { border-left-color: var(--accent-gold); background: rgba(255,255,255,0.05); }
 
 /* =========================================
-   8. CONTACT PAGE (IMPROVED TYPOGRAPHY)
+   8. CONTACT PAGE (Карточка)
    ========================================= */
-.contact-section { min-height: 80vh; display: flex; justify-content: center; align-items: center; padding: 100px 20px; }
-.executive-card { max-width: 900px; width: 100%; display: flex; gap: 50px; }
+.contact-section { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 20px; gap: 60px; }
+.executive-card { max-width: 900px; width: 100%; display: flex; gap: 50px; background-color: var(--card-bg) !important; border: 1px solid #d4af37 !important; /* Золотая рамка */ }
 .card-visual { flex: 0 0 280px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--glass-border); padding-right: 40px; }
 .img-container { width: 220px; height: 220px; position: relative; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-gold); }
 .img-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: opacity 0.5s; }
@@ -288,27 +291,9 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .contact-item:hover, .contact-item:active { transform: translateX(5px); }
 .icon-box { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--accent-gold); font-size: 1rem; transition: 0.3s; flex-shrink: 0; }
 .contact-item:hover .icon-box, .contact-item:active .icon-box { background: var(--accent-gold); color: #000; border-color: var(--accent-gold); }
-
-/* Улучшенная читаемость текста контактов */
-.info-text { display: flex; flex-direction: column; }
-.info-text .label { 
-    font-size: 0.65rem; 
-    text-transform: uppercase; 
-    color: var(--text-muted); 
-    letter-spacing: 1px;
-    margin-bottom: 3px; 
-    opacity: 0.8;
-}
-.info-text .value { 
-    font-family: 'Inter', sans-serif; 
-    font-size: 1rem; 
-    color: #fff; 
-    font-weight: 500;
-}
-
+.info-text .label { font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted); }
+.info-text .value { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #fff; }
 .card-footer { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
-.vat-info { display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #555; }
-.vat-value { color: var(--text-muted); }
 
 /* =========================================
    9. LOGO MARQUEE
@@ -397,6 +382,26 @@ footer { border-top: 1px solid #1a1a1a; padding: 60px 0; text-align: center; col
     .glow-text { font-size: 2.2rem; }
     
     .cookie-banner { bottom: 0; right: 0; left: 0; max-width: 100%; border-radius: 12px 12px 0 0; border-bottom: none; }
+}
+
+/* 13. WIDE MAP SECTION */
+.map-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.wide-map-container {
+    width: 100%;
+    height: 350px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 6px;
+    overflow: hidden;
+    filter: grayscale(100%) invert(90%) contrast(120%); /* Темный стиль карты */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 .fade-in { opacity: 0; animation: fadeInMove 1s forwards; }
