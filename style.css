@@ -17,6 +17,9 @@
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
+/* Плавный скролл для якорей */
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -164,32 +167,10 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .project-card { display: flex; align-items: flex-start; gap: 60px; }
 .reverse-layout { flex-direction: row-reverse; }
 .project-image-col, .project-text-col { flex: 1; }
-
-/* FIX FOR OVERLAY TAGS */
-.img-frame { 
-    position: relative; 
-    border-radius: 6px; 
-    overflow: hidden; 
-    border: 1px solid var(--glass-border); 
-    background: #000; 
-}
+.img-frame { position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--glass-border); background: #000; }
 .img-frame img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; opacity: 0.9; }
 .img-frame:hover img { transform: scale(1.03); opacity: 1; }
-
-/* Позиционирование тега внутри .img-frame */
-.overlay-tag { 
-    position: absolute; 
-    top: 20px; 
-    left: 20px; 
-    background: rgba(20, 22, 27, 0.9); 
-    color: var(--accent-gold); 
-    padding: 5px 12px; 
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    border: 1px solid var(--accent-gold); 
-    z-index: 5; 
-}
-
+.overlay-tag { position: absolute; top: 20px; left: 20px; background: rgba(20, 22, 27, 0.9); color: var(--accent-gold); padding: 5px 12px; font-size: 0.75rem; text-transform: uppercase; border: 1px solid var(--accent-gold); z-index: 5; }
 .project-text-col h2, .research-text h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: #fff; margin-top: 0; margin-bottom: 15px; }
 .tech-stack span, .tags span { font-size: 0.8rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 4px 10px; margin-right: 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
 .tech-stack span:hover, .tags span:hover { border-color: var(--accent-gold); color: #fff; }
@@ -198,21 +179,21 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .highlight-item { border-left-color: var(--accent-gold); background: linear-gradient(90deg, rgba(212, 175, 55, 0.05), transparent); }
 .research-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; flex-wrap: wrap; gap: 10px; }
 .journal-badge { background: var(--accent-gold); color: #000; font-weight: 700; font-size: 0.75rem; padding: 4px 12px; border-radius: 2px; text-transform: uppercase; }
+.doi-link { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted); word-break: break-all; }
 .research-content { display: flex; gap: 40px; }
 .research-visual img { width: 100%; border-radius: 4px; border: 1px solid #333; }
 
 /* =========================================
-   8. CONTACT PAGE (FIXED SPACING)
+   8. CONTACT PAGE
    ========================================= */
 .contact-section { min-height: 80vh; display: flex; justify-content: center; align-items: center; padding: 100px 20px; }
 .executive-card { max-width: 900px; width: 100%; display: flex; gap: 50px; }
 .card-visual { flex: 0 0 280px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--glass-border); padding-right: 40px; }
 .img-container { width: 220px; height: 220px; position: relative; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-gold); }
-.img-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; transition: 0.5s; }
+.img-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; transition: opacity 0.5s; }
 .primary-img { opacity: 1; } .hover-img { opacity: 0; }
 .img-container:hover .hover-img { opacity: 1; } .img-container:hover .primary-img { opacity: 0; }
 .card-details { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-/* Увеличенный отступ в списке контактов */
 .contact-list { display: flex; flex-direction: column; gap: 30px; margin-bottom: 30px; }
 .contact-item { display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.3s; }
 .contact-item:hover { transform: translateX(5px); }
@@ -246,7 +227,7 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .footer-links a:hover { color: var(--accent-gold); }
 
 /* =========================================
-   11. COOKIE BANNER
+   11. COOKIE BANNER (GDPR)
    ========================================= */
 .cookie-banner { position: fixed; bottom: 30px; right: 30px; max-width: 380px; background: rgba(22, 27, 34, 0.98); border: 1px solid var(--accent-gold); border-radius: 8px; padding: 25px; z-index: 10000; display: none; animation: slideInUp 0.6s ease forwards; }
 .btn-accept { background: var(--accent-gold); color: #000; border: none; padding: 8px 20px; border-radius: 2px; font-weight: 700; font-size: 0.8rem; cursor: pointer; flex: 1; transition: 0.3s; }
@@ -270,6 +251,19 @@ nav a:hover, nav a.active { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,
 .magnet-tag { font-family: 'JetBrains Mono'; color: var(--accent-gold); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 15px; display: block; }
 .magnet-form { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; justify-content: center; }
 .email-input { flex: 1; min-width: 250px; padding: 15px 20px; background: #0b0c10; border: 1px solid #333; color: #fff; border-radius: 4px; font-family: 'Inter'; }
+
+/* =========================================
+   16. GOLDEN SCROLL INDICATOR
+   ========================================= */
+.scroll-indicator-container {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 10; cursor: pointer; text-decoration: none; opacity: 0; animation: fadeInMove 1s forwards 1.5s;
+}
+.scroll-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; transition: 0.3s; }
+.scroll-circle { width: 50px; height: 50px; border: 1px solid var(--accent-gold); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: var(--accent-gold); background: rgba(11, 12, 16, 0.6); backdrop-filter: blur(5px); box-shadow: 0 0 0 rgba(212, 175, 55, 0.4); transition: 0.3s ease; animation: pulseGold 2s infinite; }
+.scroll-circle i { font-size: 1rem; transition: 0.3s; }
+.scroll-indicator-container:hover .scroll-circle { background: var(--accent-gold); color: #000; box-shadow: 0 0 20px rgba(212, 175, 55, 0.8); transform: translateY(5px); }
+.scroll-indicator-container:hover .scroll-label { color: #fff; letter-spacing: 3px; }
+@keyframes pulseGold { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
 
 /* =========================================
    12. MEDIA QUERIES
