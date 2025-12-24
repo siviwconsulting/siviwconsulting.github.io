@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -85,9 +86,26 @@
 
     </div>
 
+    <!-- Cookie Banner (Same as index) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-title">
+            <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
+            <span data-key="cookie_title">Privacy & Experience</span>
+        </div>
+        <div class="cookie-text" data-key="cookie_text">We use cookies to enhance your browsing experience.</div>
+        <div class="cookie-actions">
+            <button class="btn-decline" onclick="declineCookies()" data-key="btn_decline">Decline</button>
+            <button class="btn-accept" onclick="acceptCookies()" data-key="btn_accept">Accept</button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
+            <div class="footer-links">
+                <a href="#" data-key="footer_privacy">Privacy Policy</a> | 
+                <a href="#" data-key="footer_terms">Terms of Service</a>
+            </div>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
                     <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
@@ -105,28 +123,30 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- TRANSLATIONS WITH MEMORY ---
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
                 res_title: "Scientific Heritage", res_subtitle: "Grounded in rigorous academic research and peer-reviewed mathematical innovations.",
                 lbl_authors: "Authors:",
                 r1_title: "Exact Estimation of Elasticity Parameters in Thermoelastic Stress Models", r1_abstract: "This paper presents a well-posed mathematical model depicting general interconnections between physically governed fields for thermally heated plates. The novelty lies in the derivation of exact estimators utilizing variational calculus and fractional order derivatives.",
-                r2_title: "Analytical Inverse Analysis for Multilayered Medium Terrain", r2_abstract: "We demonstrate a novel inverse theory approach for the analytical estimation of thermo-physical properties in multi-layered media. Using homogenized experimental measurements, we derived exact analytical expressions to determine eight key physical parameters simultaneously."
+                r2_title: "Analytical Inverse Analysis for Multilayered Medium Terrain", r2_abstract: "We demonstrate a novel inverse theory approach for the analytical estimation of thermo-physical properties in multi-layered media. Using homogenized experimental measurements, we derived exact analytical expressions to determine eight key physical parameters simultaneously.",
+                cookie_title: "Privacy & Experience", cookie_text: "We use cookies to enhance your browsing experience.", btn_accept: "Accept", btn_decline: "Decline", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
             },
             ru: {
                 nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
                 res_title: "Научное Наследие", res_subtitle: "Основано на строгих академических исследованиях и рецензируемых математических инновациях.",
                 lbl_authors: "Авторы:",
                 r1_title: "Точная Оценка Параметров Упругости в Моделях Термоупругого Напряжения", r1_abstract: "Представлена корректная математическая модель, описывающая взаимосвязи между физическими полями для термически нагретых пластин. Новизна заключается в выводе точных оценок с использованием вариационного исчисления.",
-                r2_title: "Аналитический Обратный Анализ для Многослойных Сред", r2_abstract: "Мы демонстрируем новый подход обратной теории для аналитической оценки теплофизических свойств в многослойных средах. Выведены точные аналитические выражения для одновременного определения восьми физических параметров."
+                r2_title: "Аналитический Обратный Анализ для Многослойных Сред", r2_abstract: "Мы демонстрируем новый подход обратной теории для аналитической оценки теплофизических свойств в многослойных средах. Выведены точные аналитические выражения для одновременного определения восьми физических параметров.",
+                cookie_title: "Конфиденциальность", cookie_text: "Мы используем cookies для улучшения работы сайта.", btn_accept: "Принять", btn_decline: "Отклонить", footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
             },
             it: {
                 nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
                 res_title: "Patrimonio Scientifico", res_subtitle: "Fondato su rigorose ricerche accademiche e innovazioni matematiche peer-reviewed.",
                 lbl_authors: "Autori:",
                 r1_title: "Stima Esatta dei Parametri di Elasticità nei Modelli di Stress Termoelastico", r1_abstract: "Questo articolo presenta un modello matematico ben posto che descrive le interconnessioni generali tra campi fisici per piastre riscaldate termicamente. La novità risiede nella derivazione di stimatori esatti.",
-                r2_title: "Analisi Inversa Analitica per Terreni Multistrato", r2_abstract: "Dimostriamo un nuovo approccio di teoria inversa per la stima analitica delle proprietà termo-fisiche in mezzi multistrato. Sono state derivate espressioni analitiche esatte per determinare simultaneamente otto parametri fisici chiave."
+                r2_title: "Analisi Inversa Analitica per Terreni Multistrato", r2_abstract: "Dimostriamo un nuovo approccio di teoria inversa per la stima analitica delle proprietà termo-fisiche in mezzi multistrato. Sono state derivate espressioni analitiche esatte per determinare simultaneamente otto parametri fisici chiave.",
+                cookie_title: "Privacy & Esperienza", cookie_text: "Utilizziamo i cookie per migliorare la tua esperienza.", btn_accept: "Accetta", btn_decline: "Rifiuta", footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
             }
         };
 
@@ -146,7 +166,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             setLanguage(savedLang);
+            if (!localStorage.getItem("cookieConsent")) setTimeout(() => { document.getElementById("cookie-banner").style.display = "block"; }, 1000);
         });
+        function acceptCookies() { localStorage.setItem("cookieConsent", "accepted"); document.getElementById("cookie-banner").style.display = "none"; }
+        function declineCookies() { localStorage.setItem("cookieConsent", "declined"); document.getElementById("cookie-banner").style.display = "none"; }
     </script>
 
 </body>
