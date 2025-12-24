@@ -8,185 +8,25 @@
     <link rel="icon" href="Log.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
-
     <div class="ambient-light"></div>
     <div class="scanline"></div>
-
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand-horizontal">
-                <img src="pic.gif" alt="Logo" class="nav-logo-icon">
-                <div class="brand-text">
-                    <span class="brand-name">SINITSA</span>
-                    <span class="brand-sub">VITAWARE</span>
-                </div>
-            </a>
-            <nav>
-                <a href="index.html" data-key="nav_home">Home</a>
-                <a href="projects.html" data-key="nav_projects">Projects</a>
-                <a href="research.html" data-key="nav_research">Research</a>
-                <a href="insights.html" class="active" data-key="nav_insights">Insights</a>
-                <a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a>
-                <div class="lang-switcher">
-                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn" onclick="setLanguage('it')">IT</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="page-header fade-in">
-        <h1 data-key="blog_header">Industry Insights</h1>
-        <p data-key="blog_subtitle">Expert commentary on the future of computational engineering and AI.</p>
-    </section>
-
-    <!-- GRID OF INSIGHTS -->
-    <section class="info-section">
-        <div class="grid-container">
-            
-            <!-- Insight 1 -->
-            <article class="blog-card reveal">
-                <div class="blog-img-container">
-                    <img src="1.png" alt="Jet Engine">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-category">Strategic Analysis</span>
-                    <h3 class="blog-title" data-key="blog1_title">The "Expertise Premium" in the Age of AI</h3>
-                    <p class="blog-excerpt" data-key="blog1_text">Why automation in R&D isn't replacing engineers, but demanding PhD-level intuition. Analyzing the shift from routine calculation to high-stakes interpretation.</p>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link">
-                        <i class="fa-brands fa-linkedin"></i> Read on LinkedIn
-                    </a>
-                </div>
-            </article>
-
-            <!-- Insight 2 -->
-            <article class="blog-card reveal">
-                <div class="blog-img-container">
-                    <img src="12.png" alt="Heat Map">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-category">Tech Review</span>
-                    <h3 class="blog-title" data-key="blog2_title">Nvidia's XMeshGraphNet & Reservoir Simulation</h3>
-                    <p class="blog-excerpt" data-key="blog2_text">How physics-informed surrogate models are bridging the gap between GPU brute force and Finite-Volume method reliability in energy sectors.</p>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link">
-                        <i class="fa-brands fa-linkedin"></i> Read on LinkedIn
-                    </a>
-                </div>
-            </article>
-
-            <!-- Insight 3 -->
-            <article class="blog-card reveal">
-                <div class="blog-img-container">
-                    <img src="14.jpg" alt="Graph">
-                </div>
-                <div class="blog-content">
-                    <span class="blog-category">Future Trends</span>
-                    <h3 class="blog-title" data-key="blog3_title">The "Digital First" Mandate for 2026</h3>
-                    <p class="blog-excerpt" data-key="blog3_text">Physical prototypes are dead. Reflecting on the "System of Systems" approach and why mastering virtual interdependencies is the new survival requirement.</p>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link">
-                        <i class="fa-brands fa-linkedin"></i> Read on LinkedIn
-                    </a>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- LEAD MAGNET (WHITE PAPER) -->
-    <section class="lead-magnet-section reveal">
-        <div class="magnet-container">
-            <span class="magnet-tag">Exclusive Report</span>
-            <h2 data-key="wp_title">5 Myths about Digital Twins in Manufacturing</h2>
-            <p style="color: #9aa0a6; margin-top: 15px;" data-key="wp_text">
-                Avoid costly implementation mistakes. Download our executive guide on how to prepare your data for high-fidelity AI-simulation.
-            </p>
-            
-            <form action="https://formspree.io/f/xykgvnnr" method="POST" class="magnet-form">
-                <input type="email" name="email" class="email-input" placeholder="Enter your corporate email" required>
-                <!-- Redirect to PDF after success -->
-                <input type="hidden" name="_next" value="https://siviwconsulting.github.io/whitepaper.pdf">
-                <button type="submit" class="btn btn-primary" data-key="wp_btn">Download Whitepaper</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
-            <div class="footer-links">
-                <a href="privacy.html" data-key="footer_privacy">Privacy Policy</a> | 
-                <a href="terms.html" data-key="footer_terms">Terms of Service</a>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
-                    <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
-                </a>
-            </div>
-        </div>
-    </footer>
-
+    <header class="navbar"><div class="nav-container"><a href="index.html" class="brand-horizontal"><img src="pic.gif" alt="Logo" class="nav-logo-icon"><div class="brand-text"><span class="brand-name">SINITSA</span><span class="brand-sub">VITAWARE</span></div></a><nav><a href="index.html" data-key="nav_home">Home</a><a href="projects.html" data-key="nav_projects">Projects</a><a href="research.html" data-key="nav_research">Research</a><a href="insights.html" class="active" data-key="nav_insights">Insights</a><a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a><div class="lang-switcher"><button class="lang-btn" onclick="setLanguage('en')">EN</button><span class="lang-divider">|</span><button class="lang-btn" onclick="setLanguage('ru')">RU</button><span class="lang-divider">|</span><button class="lang-btn" onclick="setLanguage('it')">IT</button></div></nav></div></header>
+    <section class="page-header fade-in"><h1 data-key="blog_header">Industry Insights</h1><p data-key="blog_subtitle">Expert commentary on the future of computational engineering and AI.</p></section>
+    <section class="info-section"><div class="grid-container">
+        <article class="blog-card reveal"><div class="blog-img-container"><img src="1.png" alt="Jet Engine"></div><div class="blog-content"><span class="blog-category">Strategic Analysis</span><h3 class="blog-title" data-key="blog1_title">The "Expertise Premium" in the Age of AI</h3><p class="blog-excerpt" data-key="blog1_text">Why automation in R&D isn't replacing engineers, but demanding PhD-level intuition. Analyzing the shift from routine calculation to high-stakes interpretation.</p><a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link"><i class="fa-brands fa-linkedin"></i> Read on LinkedIn</a></div></article>
+        <article class="blog-card reveal"><div class="blog-img-container"><img src="12.png" alt="Heat Map"></div><div class="blog-content"><span class="blog-category">Tech Review</span><h3 class="blog-title" data-key="blog2_title">Nvidia's XMeshGraphNet & Reservoir Simulation</h3><p class="blog-excerpt" data-key="blog2_text">How physics-informed surrogate models are bridging the gap between GPU brute force and Finite-Volume method reliability in energy sectors.</p><a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link"><i class="fa-brands fa-linkedin"></i> Read on LinkedIn</a></div></article>
+        <article class="blog-card reveal"><div class="blog-img-container"><img src="14.jpg" alt="Graph"></div><div class="blog-content"><span class="blog-category">Future Trends</span><h3 class="blog-title" data-key="blog3_title">The "Digital First" Mandate for 2026</h3><p class="blog-excerpt" data-key="blog3_text">Physical prototypes are dead. Reflecting on the "System of Systems" approach and why mastering virtual interdependencies is the new survival requirement.</p><a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link"><i class="fa-brands fa-linkedin"></i> Read on LinkedIn</a></div></article>
+    </div></section>
+    <section class="lead-magnet-section reveal"><div class="magnet-container"><span class="magnet-tag">Exclusive Report</span><h2 data-key="wp_title">5 Myths about Digital Twins in Manufacturing</h2><p style="color: #9aa0a6; margin-top: 15px;" data-key="wp_text">Avoid costly implementation mistakes. Download our executive guide on how to prepare your data for high-fidelity AI-simulation.</p><form action="https://formspree.io/f/xykgvnnr" method="POST" class="magnet-form"><input type="email" name="email" class="email-input" placeholder="Enter your corporate email" required><input type="hidden" name="_next" value="https://siviwconsulting.github.io/whitepaper.pdf"><button type="submit" class="btn btn-primary" data-key="wp_btn">Download Whitepaper</button></form></div></section>
+    <footer><div class="footer-content"><p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p><div class="footer-links"><a href="privacy.html" data-key="footer_privacy">Privacy Policy</a> | <a href="terms.html" data-key="footer_terms">Terms of Service</a></div><div class="footer-socials"><a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon"><img src="LinkedIn_2021.svg.png" alt="LinkedIn"></a></div></div></footer>
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-                else entry.target.classList.remove('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        const translations = {
-            en: {
-                nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_insights: "Insights", nav_contact: "Contact",
-                blog_header: "Industry Insights", blog_subtitle: "Expert commentary on the future of computational engineering.",
-                blog1_title: "The \"Expertise Premium\" in the Age of AI", blog1_text: "Why automation in R&D isn't replacing engineers, but demanding PhD-level intuition.",
-                blog2_title: "Nvidia's XMeshGraphNet & Reservoir Simulation", blog2_text: "How physics-informed surrogate models are bridging the gap between GPU brute force and reliability.",
-                blog3_title: "The \"Digital First\" Mandate for 2026", blog3_text: "Physical prototypes are dead. Reflecting on the \"System of Systems\" approach.",
-                wp_title: "5 Myths about Digital Twins", wp_text: "Download our executive guide on how to prepare your data for high-fidelity AI-simulation.", wp_btn: "Download Whitepaper",
-                footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
-            },
-            ru: {
-                nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_insights: "Инсайты", nav_contact: "Контакты",
-                blog_header: "Инсайты Индустрии", blog_subtitle: "Экспертные комментарии о будущем вычислительной инженерии.",
-                blog1_title: "Премия за Экспертность в Эпоху ИИ", blog1_text: "Почему автоматизация в R&D не заменяет инженеров, а требует интуиции уровня PhD.",
-                blog2_title: "Nvidia XMeshGraphNet и Симуляция Резервуаров", blog2_text: "Как суррогатные модели, основанные на физике, объединяют мощь GPU и надежность методов конечных объемов.",
-                blog3_title: "Мандат Digital First на 2026 год", blog3_text: "Физические прототипы мертвы. Размышления о подходе «Система систем».",
-                wp_title: "5 Мифов о Цифровых Двойниках", wp_text: "Скачайте наше руководство о подготовке данных для высокоточного ИИ-моделирования.", wp_btn: "Скачать",
-                footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
-            },
-            it: {
-                nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_insights: "Approfondimenti", nav_contact: "Contatti",
-                blog_header: "Approfondimenti del Settore", blog_subtitle: "Commenti di esperti sul futuro dell'ingegneria computazionale.",
-                blog1_title: "Il \"Premio di Competenza\" nell'Era dell'IA", blog1_text: "Perché l'automazione in R&S non sostituisce gli ingegneri, ma richiede un'intuizione di livello PhD.",
-                blog2_title: "Nvidia XMeshGraphNet e Simulazione di Serbatoi", blog2_text: "Come i modelli surrogati informati dalla fisica colmano il divario tra la forza bruta della GPU e l'affidabilità.",
-                blog3_title: "Il Mandato \"Digital First\" per il 2026", blog3_text: "I prototipi fisici sono morti. Riflessioni sull'approccio \"Sistema di Sistemi\".",
-                wp_title: "5 Miti sui Digital Twins", wp_text: "Scarica la nostra guida su come preparare i dati per la simulazione AI ad alta fedeltà.", wp_btn: "Scarica Whitepaper",
-                footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
-            }
-        };
-
-        function setLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang);
-            const elements = document.querySelectorAll('[data-key]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (translations[lang][key]) el.innerHTML = translations[lang][key];
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const btnText = lang.toUpperCase();
-            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent === btnText);
-            if (activeBtn) activeBtn.classList.add('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            setLanguage(savedLang);
-        });
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('active');else entry.target.classList.remove('active');});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        const translations={en:{nav_home:"Home",nav_projects:"Projects",nav_research:"Research",nav_insights:"Insights",nav_contact:"Contact",blog_header:"Industry Insights",blog_subtitle:"Expert commentary on the future of computational engineering.",blog1_title:"The \"Expertise Premium\" in the Age of AI",blog1_text:"Why automation in R&D isn't replacing engineers, but demanding PhD-level intuition.",blog2_title:"Nvidia's XMeshGraphNet & Reservoir Simulation",blog2_text:"How physics-informed surrogate models are bridging the gap between GPU brute force and reliability.",blog3_title:"The \"Digital First\" Mandate for 2026",blog3_text:"Physical prototypes are dead. Reflecting on the \"System of Systems\" approach.",wp_title:"5 Myths about Digital Twins",wp_text:"Download our executive guide on how to prepare your data for high-fidelity AI-simulation.",wp_btn:"Download Whitepaper",footer_privacy:"Privacy Policy",footer_terms:"Terms of Service"},ru:{nav_home:"Главная",nav_projects:"Проекты",nav_research:"Наука",nav_insights:"Инсайты",nav_contact:"Контакты",blog_header:"Инсайты Индустрии",blog_subtitle:"Экспертные комментарии о будущем вычислительной инженерии.",blog1_title:"Премия за Экспертность в Эпоху ИИ",blog1_text:"Почему автоматизация в R&D не заменяет инженеров, а требует интуиции уровня PhD.",blog2_title:"Nvidia XMeshGraphNet и Симуляция Резервуаров",blog2_text:"Как суррогатные модели, основанные на физике, объединяют мощь GPU и надежность методов конечных объемов.",blog3_title:"Мандат Digital First на 2026 год",blog3_text:"Физические прототипы мертвы. Размышления о подходе «Система систем».",wp_title:"5 Мифов о Цифровых Двойниках",wp_text:"Скачайте наше руководство о подготовке данных для высокоточного ИИ-моделирования.",wp_btn:"Скачать",footer_privacy:"Политика конфиденциальности",footer_terms:"Условия использования"},it:{nav_home:"Home",nav_projects:"Progetti",nav_research:"Ricerca",nav_insights:"Approfondimenti",nav_contact:"Contatti",blog_header:"Approfondimenti del Settore",blog_subtitle:"Commenti di esperti sul futuro dell'ingegneria computazionale.",blog1_title:"Il \"Premio di Competenza\" nell'Era dell'IA",blog1_text:"Perché l'automazione in R&S non sostituisce gli ingegneri, ma richiede un'intuizione di livello PhD.",blog2_title:"Nvidia XMeshGraphNet e Simulazione di Serbatoi",blog2_text:"Come i modelli surrogati informati dalla fisica colmano il divario tra la forza bruta della GPU e l'affidabilità.",blog3_title:"Il Mandato \"Digital First\" per il 2026",blog3_text:"I prototipi fisici sono morti. Riflessioni sull'approccio \"Sistema di Sistemi\".",wp_title:"5 Miti sui Digital Twins",wp_text:"Scarica la nostra guida su come preparare i dati per la simulazione AI ad alta fedeltà.",wp_btn:"Scarica Whitepaper",footer_privacy:"Privacy Policy",footer_terms:"Termini di Servizio"}};
+        function setLanguage(lang){localStorage.setItem('preferredLanguage',lang);const elements=document.querySelectorAll('[data-key]');elements.forEach(el=>{const key=el.getAttribute('data-key');if(translations[lang][key])el.innerHTML=translations[lang][key];});document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'));const btnText=lang.toUpperCase();const activeBtn=Array.from(document.querySelectorAll('.lang-btn')).find(b=>b.textContent===btnText);if(activeBtn)activeBtn.classList.add('active');}
+        document.addEventListener('DOMContentLoaded',()=>{const savedLang=localStorage.getItem('preferredLanguage')||'en';setLanguage(savedLang);});
     </script>
-
 </body>
 </html>
