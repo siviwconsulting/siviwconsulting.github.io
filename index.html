@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Calendly Styles -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
@@ -134,9 +133,9 @@
         <div class="footer-content">
             <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
             <div class="footer-links">
-                <!-- Placeholders for Legal Pages -->
-                <a href="#" data-key="footer_privacy">Privacy Policy</a> | 
-                <a href="#" data-key="footer_terms">Terms of Service</a>
+                <!-- Ссылки на новые страницы -->
+                <a href="privacy.html" data-key="footer_privacy">Privacy Policy</a> | 
+                <a href="terms.html" data-key="footer_terms">Terms of Service</a>
             </div>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
@@ -223,7 +222,6 @@
             if (activeBtn) activeBtn.classList.add('active');
         }
 
-        // Cookie Logic
         document.addEventListener("DOMContentLoaded", function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             setLanguage(savedLang);
