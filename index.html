@@ -6,10 +6,8 @@
     <title>Sinitsa VitaWare | Computational Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -25,6 +23,7 @@
                     <span class="brand-sub">VITAWARE</span>
                 </div>
             </a>
+            
             <nav>
                 <a href="index.html" class="active" data-key="nav_home">Home</a>
                 <a href="projects.html" data-key="nav_projects">Projects</a>
@@ -54,13 +53,6 @@
                 <a href="projects.html" class="btn btn-primary shimmer-btn" data-key="hero_btn">View Case Studies</a>
             </div>
         </div>
-        <!-- GOLDEN SCROLL ARROW -->
-        <a href="#lead-magnet" class="scroll-indicator-container">
-            <span class="scroll-label" data-key="scroll_label">Get Exclusive Report</span>
-            <div class="scroll-circle">
-                <i class="fa-solid fa-arrow-down"></i>
-            </div>
-        </a>
     </section>
 
     <section class="info-section">
@@ -123,37 +115,6 @@
         </div>
     </section>
 
-    <section class="insights-section reveal">
-        <h2 class="section-title" data-key="blog_header">Industry Insights</h2>
-        <div class="grid-container">
-            <article class="blog-card">
-                <div class="blog-img-container"><img src="1.png"></div>
-                <div class="blog-content">
-                    <span class="blog-category">Strategic Analysis</span>
-                    <h3 class="blog-title" data-key="blog1_title">The "Expertise Premium" in the Age of AI</h3>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link"><i class="fa-brands fa-linkedin"></i> Read on LinkedIn</a>
-                </div>
-            </article>
-            <article class="blog-card">
-                <div class="blog-img-container"><img src="12.png"></div>
-                <div class="blog-content">
-                    <span class="blog-category">Tech Review</span>
-                    <h3 class="blog-title" data-key="blog2_title">Nvidia's XMeshGraphNet & Reservoir Simulation</h3>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link"><i class="fa-brands fa-linkedin"></i> Read on LinkedIn</a>
-                </div>
-            </article>
-            <article class="blog-card">
-                <div class="blog-img-container"><img src="14.jpg"></div>
-                <div class="blog-content">
-                    <span class="blog-category">Future Trends</span>
-                    <h3 class="blog-title" data-key="blog3_title">The "Digital First" Mandate for 2026</h3>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="blog-link"><i class="fa-brands fa-linkedin"></i> Read on LinkedIn</a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- LEAD MAGNET (ID added for scroll) -->
     <section id="lead-magnet" class="lead-magnet-section reveal">
         <div class="magnet-container">
             <span class="magnet-tag">Exclusive Report</span>
@@ -169,7 +130,13 @@
         </div>
     </section>
 
-    <!-- Cookie Banner -->
+    <!-- FIXED FLOATING BUTTON (RIGHT) -->
+    <a href="#lead-magnet" class="floating-report-btn">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <span class="floating-text">Get Report</span>
+    </a>
+
+    <!-- Cookie Banner (LEFT) -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-title">
             <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
@@ -206,14 +173,12 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- TRANSLATIONS & COOKIES ---
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_insights: "Insights", nav_contact: "Contact",
                 hero_title: "Computational Engineering <br> & Digital Intelligence",
                 hero_subtitle: "Simulating the invisible. Optimizing the reality.",
                 hero_btn: "View Case Studies",
-                scroll_label: "Get Exclusive Report",
                 info_multi_title: "Multiphysics", info_multi_text: "Coupled FEM/CFD simulations for extreme industrial environments. High-fidelity thermal and structural analysis.",
                 info_dt_title: "Digital Twins", info_dt_text: "Real-time operational replicas for predictive maintenance. Mathematical frameworks integrated with physical assets.",
                 info_da_title: "Data Analytics", info_da_text: "High-dimensional statistical mapping and risk clustering. Reveal hidden patterns in complex technical datasets.",
@@ -223,10 +188,6 @@
                 step3_title: "Optimization", step3_text: "Iterative AI-driven parameter sampling to identify optimal design configurations.",
                 step4_title: "Handover", step4_text: "Delivery of detailed reports, open-source code, and operational Digital Twins.",
                 tech_title: "Technology Ecosystem",
-                blog_header: "Industry Insights",
-                blog1_title: "The \"Expertise Premium\" in the Age of AI", blog1_text: "Why automation in R&D isn't replacing engineers, but demanding PhD-level intuition.",
-                blog2_title: "Nvidia's XMeshGraphNet & Reservoir Simulation", blog2_text: "How physics-informed surrogate models are bridging the gap between GPU brute force and reliability.",
-                blog3_title: "The \"Digital First\" Mandate for 2026", blog3_text: "Physical prototypes are dead. Reflecting on the \"System of Systems\" approach.",
                 wp_title: "5 Myths about Digital Twins", wp_text: "Download our executive guide on how to prepare your data for high-fidelity AI-simulation.", wp_btn: "Download Whitepaper",
                 cookie_title: "Privacy & Experience", cookie_text: "We use cookies to enhance your browsing experience.", btn_accept: "Accept", btn_decline: "Decline", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
             },
@@ -235,7 +196,6 @@
                 hero_title: "Вычислительный Инжиниринг <br> и Цифровой Интеллект",
                 hero_subtitle: "Моделируем невидимое. Оптимизируем реальность.",
                 hero_btn: "Смотреть Кейсы",
-                scroll_label: "Получить Отчет",
                 info_multi_title: "Мультифизика", info_multi_text: "Сопряженное FEM/CFD моделирование для экстремальных промышленных условий. Высокоточный термический и структурный анализ.",
                 info_dt_title: "Цифровые Двойники", info_dt_text: "Операционные реплики реального времени для предиктивного обслуживания. Математические фреймворки, интегрированные с активами.",
                 info_da_title: "Анализ Данных", info_da_text: "Многомерное статистическое картирование и кластеризация рисков. Выявление скрытых паттернов в сложных данных.",
@@ -245,10 +205,6 @@
                 step3_title: "Оптимизация", step3_text: "Итеративная выборка параметров с помощью ИИ для поиска оптимальных конфигураций.",
                 step4_title: "Передача", step4_text: "Предоставление подробных отчетов, открытого кода и работающих Цифровых Двойников.",
                 tech_title: "Технологическая Экосистема",
-                blog_header: "Инсайты Индустрии",
-                blog1_title: "Премия за Экспертность в Эпоху ИИ", blog1_text: "Почему автоматизация в R&D не заменяет инженеров, а требует интуиции уровня PhD.",
-                blog2_title: "Nvidia XMeshGraphNet и Симуляция Резервуаров", blog2_text: "Как суррогатные модели, основанные на физике, объединяют мощь GPU и надежность методов конечных объемов.",
-                blog3_title: "Мандат Digital First на 2026 год", blog3_text: "Физические прототипы мертвы. Размышления о подходе «Система систем».",
                 wp_title: "5 Мифов о Цифровых Двойниках", wp_text: "Скачайте наше руководство о подготовке данных для высокоточного ИИ-моделирования.", wp_btn: "Скачать",
                 cookie_title: "Конфиденциальность", cookie_text: "Мы используем cookies для улучшения работы сайта.", btn_accept: "Принять", btn_decline: "Отклонить", footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
             },
@@ -257,7 +213,6 @@
                 hero_title: "Ingegneria Computazionale <br> & Intelligenza Digitale",
                 hero_subtitle: "Simulare l'invisibile. Ottimizzare la realtà.",
                 hero_btn: "Vedi Casi Studio",
-                scroll_label: "Scarica il Report",
                 info_multi_title: "Multifisica", info_multi_text: "Simulazioni FEM/CFD accoppiate per ambienti industriali estremi. Analisi termica e strutturale ad alta fedeltà.",
                 info_dt_title: "Digital Twins", info_dt_text: "Repliche operative in tempo reale per la manutenzione predittiva. Framework matematici integrati con asset fisici.",
                 info_da_title: "Analisi Dati", info_da_text: "Mappatura statistica ad alta dimensione e clustering dei rischi. Rivela pattern nascosti in dataset tecnici complessi.",
@@ -267,10 +222,6 @@
                 step3_title: "Ottimizzazione", step3_text: "Campionamento iterativo dei parametri guidato dall'IA per identificare configurazioni ottimali.",
                 step4_title: "Consegna", step4_text: "Consegna di report dettagliati, codice open-source e Digital Twins operativi.",
                 tech_title: "Ecosistema Tecnologico",
-                blog_header: "Approfondimenti del Settore",
-                blog1_title: "Il \"Premio di Competenza\" nell'Era dell'IA", blog1_text: "Perché l'automazione in R&S non sostituisce gli ingegneri, ma richiede un'intuizione di livello PhD.",
-                blog2_title: "Nvidia XMeshGraphNet e Simulazione di Serbatoi", blog2_text: "Come i modelli surrogati informati dalla fisica colmano il divario tra la forza bruta della GPU e l'affidabilità.",
-                blog3_title: "Il Mandato \"Digital First\" per il 2026", blog3_text: "I prototipi fisici sono morti. Riflessioni sull'approccio \"Sistema di Sistemi\".",
                 wp_title: "5 Miti sui Digital Twins", wp_text: "Scarica la nostra guida su come preparare i dati per la simulazione AI ad alta fedeltà.", wp_btn: "Scarica Whitepaper",
                 cookie_title: "Privacy & Esperienza", cookie_text: "Utilizziamo i cookie per migliorare la tua esperienza.", btn_accept: "Accetta", btn_decline: "Rifiuta", footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
             }
