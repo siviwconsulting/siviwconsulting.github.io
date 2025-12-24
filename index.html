@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Calendly Styles -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -112,9 +115,29 @@
         </div>
     </section>
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-title">
+            <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
+            <span data-key="cookie_title">Privacy & Experience</span>
+        </div>
+        <div class="cookie-text" data-key="cookie_text">
+            We use cookies to enhance your browsing experience. By clicking "Accept", you consent to our use of cookies.
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-decline" onclick="declineCookies()" data-key="btn_decline">Decline</button>
+            <button class="btn-accept" onclick="acceptCookies()" data-key="btn_accept">Accept</button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
+            <div class="footer-links">
+                <!-- Placeholders for Legal Pages -->
+                <a href="#" data-key="footer_privacy">Privacy Policy</a> | 
+                <a href="#" data-key="footer_terms">Terms of Service</a>
+            </div>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
                     <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
@@ -132,7 +155,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- TRANSLATIONS WITH LOCAL STORAGE ---
+        // --- TRANSLATIONS & COOKIES ---
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
@@ -147,7 +170,9 @@
                 step2_title: "Modeling", step2_text: "Development of high-fidelity mathematical models (FEM/CFD) and validation against physical data.",
                 step3_title: "Optimization", step3_text: "Iterative AI-driven parameter sampling to identify optimal design configurations.",
                 step4_title: "Handover", step4_text: "Delivery of detailed reports, open-source code, and operational Digital Twins.",
-                tech_title: "Technology Ecosystem"
+                tech_title: "Technology Ecosystem",
+                cookie_title: "Privacy & Experience", cookie_text: "We use cookies to enhance your browsing experience. By clicking \"Accept\", you consent to our use of cookies.",
+                btn_accept: "Accept", btn_decline: "Decline", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
             },
             ru: {
                 nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
@@ -162,7 +187,9 @@
                 step2_title: "Моделирование", step2_text: "Разработка высокоточных математических моделей (FEM/CFD) и валидация на физических данных.",
                 step3_title: "Оптимизация", step3_text: "Итеративная выборка параметров с помощью ИИ для поиска оптимальных конфигураций.",
                 step4_title: "Передача", step4_text: "Предоставление подробных отчетов, открытого кода и работающих Цифровых Двойников.",
-                tech_title: "Технологическая Экосистема"
+                tech_title: "Технологическая Экосистема",
+                cookie_title: "Конфиденциальность", cookie_text: "Мы используем cookies для улучшения работы сайта. Нажимая «Принять», вы соглашаетесь с использованием cookies.",
+                btn_accept: "Принять", btn_decline: "Отклонить", footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
             },
             it: {
                 nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
@@ -177,12 +204,14 @@
                 step2_title: "Modellazione", step2_text: "Sviluppo di modelli matematici ad alta fedeltà (FEM/CFD) e convalida rispetto ai dati fisici.",
                 step3_title: "Ottimizzazione", step3_text: "Campionamento iterativo dei parametri guidato dall'IA per identificare configurazioni ottimali.",
                 step4_title: "Consegna", step4_text: "Consegna di report dettagliati, codice open-source e Digital Twins operativi.",
-                tech_title: "Ecosistema Tecnologico"
+                tech_title: "Ecosistema Tecnologico",
+                cookie_title: "Privacy & Esperienza", cookie_text: "Utilizziamo i cookie per migliorare la tua esperienza. Cliccando su \"Accetta\", acconsenti al nostro utilizzo dei cookie.",
+                btn_accept: "Accetta", btn_decline: "Rifiuta", footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
             }
         };
 
         function setLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang); // СОХРАНЯЕМ ВЫБОР
+            localStorage.setItem('preferredLanguage', lang);
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-key');
@@ -194,12 +223,24 @@
             if (activeBtn) activeBtn.classList.add('active');
         }
 
-        // ПРИ ЗАГРУЗКЕ ЧИТАЕМ ИЗ ПАМЯТИ
-        document.addEventListener('DOMContentLoaded', () => {
+        // Cookie Logic
+        document.addEventListener("DOMContentLoaded", function() {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             setLanguage(savedLang);
-        });
-    </script>
 
+            if (!localStorage.getItem("cookieConsent")) {
+                setTimeout(() => { document.getElementById("cookie-banner").style.display = "block"; }, 1000);
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem("cookieConsent", "accepted");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+        function declineCookies() {
+            localStorage.setItem("cookieConsent", "declined");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+    </script>
 </body>
 </html>
