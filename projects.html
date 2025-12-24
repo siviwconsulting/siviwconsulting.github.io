@@ -7,222 +7,24 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-    <style>
-        .img-frame { background-color: #1a1a1a; min-height: 250px; display: flex; align-items: center; justify-content: center; }
-    </style>
+    <style>.img-frame{background-color:#020c1b;min-height:250px;display:flex;align-items:center;justify-content:center;}</style>
 </head>
 <body>
-
     <div class="ambient-light"></div>
     <div class="scanline"></div>
-
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand-horizontal">
-                <img src="pic.gif" alt="Logo" class="nav-logo-icon">
-                <div class="brand-text">
-                    <span class="brand-name">SINITSA</span>
-                    <span class="brand-sub">VITAWARE</span>
-                </div>
-            </a>
-            <nav>
-                <a href="index.html" data-key="nav_home">Home</a>
-                <a href="projects.html" class="active" data-key="nav_projects">Projects</a>
-                <a href="research.html" data-key="nav_research">Research</a>
-                <a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a>
-                <div class="lang-switcher">
-                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
-                    <span class="lang-divider">|</span>
-                    <button class="lang-btn" onclick="setLanguage('it')">IT</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="page-header fade-in">
-        <h1 data-key="proj_title">Engineering Impact</h1>
-        <p data-key="proj_subtitle">Selected case studies demonstrating high-fidelity simulation and data intelligence.</p>
-    </section>
-
+    <header class="navbar"><div class="nav-container"><a href="index.html" class="brand-horizontal"><img src="pic.gif" alt="Logo" class="nav-logo-icon"><div class="brand-text"><span class="brand-name">SINITSA</span><span class="brand-sub">VITAWARE</span></div></a><nav><a href="index.html" data-key="nav_home">Home</a><a href="projects.html" class="active" data-key="nav_projects">Projects</a><a href="research.html" data-key="nav_research">Research</a><a href="insights.html" data-key="nav_insights">Insights</a><a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a><div class="lang-switcher"><button class="lang-btn" onclick="setLanguage('en')">EN</button><span class="lang-divider">|</span><button class="lang-btn" onclick="setLanguage('ru')">RU</button><span class="lang-divider">|</span><button class="lang-btn" onclick="setLanguage('it')">IT</button></div></nav></div></header>
+    <section class="page-header fade-in"><h1 data-key="proj_title">Engineering Impact</h1><p data-key="proj_subtitle">Selected case studies demonstrating high-fidelity simulation and data intelligence.</p></section>
     <div class="projects-wrapper">
-
-        <article class="project-card reveal">
-            <div class="project-image-col">
-                <div class="img-frame">
-                    <img src="1.png" alt="Jet Engine Simulation">
-                    <div class="overlay-tag" data-key="tag_aero">Aerospace</div>
-                </div>
-            </div>
-            <div class="project-text-col">
-                <h2 data-key="p1_title">Thermoelastic Turbine Optimization</h2>
-                <div class="tech-stack"><span>#FEM</span> <span>#Multiphysics</span> <span>#DigitalTwin</span></div>
-                <div class="case-study-grid">
-                    <div class="case-item">
-                        <h4 data-key="lbl_challenge">Challenge</h4>
-                        <p data-key="p1_chal">Predicting failure risks in turbine blades under extreme thermal loads (10k+ RPM).</p>
-                    </div>
-                    <div class="case-item">
-                        <h4 data-key="lbl_solution">Solution</h4>
-                        <p data-key="p1_sol">Developed a coupled thermal-structural FEM model with adaptive meshing (~1M DoF).</p>
-                    </div>
-                    <div class="case-item highlight-item">
-                        <h4 data-key="lbl_impact">Impact</h4>
-                        <p data-key="p1_imp">Achieved convergence in <10 minutes. Reduced prototype cycles by 40%.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="project-card reveal reverse-layout">
-            <div class="project-image-col">
-                <div class="img-frame">
-                    <img src="4.png" alt="Data Mapping">
-                    <div class="overlay-tag" data-key="tag_data">Data Science</div>
-                </div>
-            </div>
-            <div class="project-text-col">
-                <h2 data-key="p2_title">Multivariate Health Risk Mapping</h2>
-                <div class="tech-stack"><span>#Python</span> <span>#UMAP</span> <span>#BigData</span></div>
-                <div class="case-study-grid">
-                    <div class="case-item">
-                        <h4 data-key="lbl_challenge">Challenge</h4>
-                        <p data-key="p2_chal">Standard 2D charts failed to reveal hidden correlations in complex patient datasets.</p>
-                    </div>
-                    <div class="case-item">
-                        <h4 data-key="lbl_solution">Solution</h4>
-                        <p data-key="p2_sol">Implemented an AI-driven pipeline using manifold learning (UMAP) and 3D statistical surface fitting.</p>
-                    </div>
-                    <div class="case-item highlight-item">
-                        <h4 data-key="lbl_impact">Impact</h4>
-                        <p data-key="p2_imp">Identified hidden high-risk clusters invisible to traditional methods.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="project-card reveal">
-            <div class="project-image-col">
-                <div class="img-frame">
-                    <img src="8.png" alt="Methanol Dosing">
-                    <div class="overlay-tag" data-key="tag_process">Process Industry</div>
-                </div>
-            </div>
-            <div class="project-text-col">
-                <h2 data-key="p3_title">Digital Twin for Chemical Dosing</h2>
-                <div class="tech-stack"><span>#CFD</span> <span>#ProcessEngineering</span> <span>#Optimization</span></div>
-                <div class="case-study-grid">
-                    <div class="case-item">
-                        <h4 data-key="lbl_challenge">Challenge</h4>
-                        <p data-key="p3_chal">Preventing corrosion and uneven dosing in methanol injection systems.</p>
-                    </div>
-                    <div class="case-item">
-                        <h4 data-key="lbl_solution">Solution</h4>
-                        <p data-key="p3_sol">Created a full 3D Digital Twin of the dosing shelter (12x3x4m) to simulate fluid flow.</p>
-                    </div>
-                    <div class="case-item highlight-item">
-                        <h4 data-key="lbl_impact">Impact</h4>
-                        <p data-key="p3_imp">Optimized layout for safety and efficiency. Delivered a virtual testbed.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
+        <article class="project-card reveal"><div class="project-image-col"><div class="img-frame"><img src="1.png" alt="Jet Engine Simulation"><div class="overlay-tag" data-key="tag_aero">Aerospace</div></div></div><div class="project-text-col"><h2 data-key="p1_title">Thermoelastic Turbine Optimization</h2><div class="tech-stack"><span>#FEM</span> <span>#Multiphysics</span> <span>#DigitalTwin</span></div><div class="case-study-grid"><div class="case-item"><h4 data-key="lbl_challenge">Challenge</h4><p data-key="p1_chal">Predicting failure risks in turbine blades under extreme thermal loads (10k+ RPM).</p></div><div class="case-item"><h4 data-key="lbl_solution">Solution</h4><p data-key="p1_sol">Developed a coupled thermal-structural FEM model with adaptive meshing (~1M DoF).</p></div><div class="case-item highlight-item"><h4 data-key="lbl_impact">Impact</h4><p data-key="p1_imp">Achieved convergence in <10 minutes. Reduced prototype cycles by 40%.</p></div></div></div></article>
+        <article class="project-card reveal reverse-layout"><div class="project-image-col"><div class="img-frame"><img src="4.png" alt="Data Mapping"><div class="overlay-tag" data-key="tag_data">Data Science</div></div></div><div class="project-text-col"><h2 data-key="p2_title">Multivariate Health Risk Mapping</h2><div class="tech-stack"><span>#Python</span> <span>#UMAP</span> <span>#BigData</span></div><div class="case-study-grid"><div class="case-item"><h4 data-key="lbl_challenge">Challenge</h4><p data-key="p2_chal">Standard 2D charts failed to reveal hidden correlations in complex patient datasets.</p></div><div class="case-item"><h4 data-key="lbl_solution">Solution</h4><p data-key="p2_sol">Implemented an AI-driven pipeline using manifold learning (UMAP) and 3D statistical surface fitting.</p></div><div class="case-item highlight-item"><h4 data-key="lbl_impact">Impact</h4><p data-key="p2_imp">Identified hidden high-risk clusters invisible to traditional methods.</p></div></div></div></article>
+        <article class="project-card reveal"><div class="project-image-col"><div class="img-frame"><img src="8.png" alt="Methanol Dosing"><div class="overlay-tag" data-key="tag_process">Process Industry</div></div></div><div class="project-text-col"><h2 data-key="p3_title">Digital Twin for Chemical Dosing</h2><div class="tech-stack"><span>#CFD</span> <span>#ProcessEngineering</span> <span>#Optimization</span></div><div class="case-study-grid"><div class="case-item"><h4 data-key="lbl_challenge">Challenge</h4><p data-key="p3_chal">Preventing corrosion and uneven dosing in methanol injection systems.</p></div><div class="case-item"><h4 data-key="lbl_solution">Solution</h4><p data-key="p3_sol">Created a full 3D Digital Twin of the dosing shelter (12x3x4m) to simulate fluid flow.</p></div><div class="case-item highlight-item"><h4 data-key="lbl_impact">Impact</h4><p data-key="p3_imp">Optimized layout for safety and efficiency. Delivered a virtual testbed.</p></div></div></div></article>
     </div>
-
-    <!-- Cookie Banner (Same as index) -->
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-title">
-            <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
-            <span data-key="cookie_title">Privacy & Experience</span>
-        </div>
-        <div class="cookie-text" data-key="cookie_text">We use cookies to enhance your browsing experience.</div>
-        <div class="cookie-actions">
-            <button class="btn-decline" onclick="declineCookies()" data-key="btn_decline">Decline</button>
-            <button class="btn-accept" onclick="acceptCookies()" data-key="btn_accept">Accept</button>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
-            <div class="footer-links">
-                <a href="privacy.html" data-key="footer_privacy">Privacy Policy</a> | 
-                <a href="terms.html" data-key="footer_terms">Terms of Service</a>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
-                    <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
-                </a>
-            </div>
-        </div>
-    </footer>
-
+    <footer><div class="footer-content"><p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p><div class="footer-links"><a href="privacy.html" data-key="footer_privacy">Privacy Policy</a> | <a href="terms.html" data-key="footer_terms">Terms of Service</a></div><div class="footer-socials"><a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon"><img src="LinkedIn_2021.svg.png" alt="LinkedIn"></a></div></div></footer>
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-                else entry.target.classList.remove('active');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // --- TRANSLATIONS ---
-        const translations = {
-            en: {
-                nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
-                proj_title: "Engineering Impact", proj_subtitle: "Selected industrial case studies demonstrating high-fidelity simulation.",
-                lbl_challenge: "Challenge", lbl_solution: "Solution", lbl_impact: "Impact",
-                tag_aero: "Aerospace", tag_data: "Data Science", tag_process: "Process Industry",
-                p1_title: "Thermoelastic Turbine Optimization", p1_chal: "Predicting failure risks in turbine blades under extreme thermal loads (10k+ RPM).", p1_sol: "Developed a coupled thermal-structural FEM model with adaptive meshing (~1M DoF).", p1_imp: "Achieved convergence in <10 minutes. Reduced prototype cycles by 40%.",
-                p2_title: "Multivariate Health Risk Mapping", p2_chal: "Standard 2D charts failed to reveal hidden correlations in complex patient datasets.", p2_sol: "Implemented an AI-driven pipeline using manifold learning (UMAP) and 3D statistical surface fitting.", p2_imp: "Identified hidden high-risk clusters invisible to traditional methods.",
-                p3_title: "Digital Twin for Chemical Dosing", p3_chal: "Preventing corrosion and uneven dosing in methanol injection systems.", p3_sol: "Created a full 3D Digital Twin of the dosing shelter (12x3x4m) to simulate fluid flow.", p3_imp: "Optimized layout for safety and efficiency. Delivered a virtual testbed.",
-                cookie_title: "Privacy & Experience", cookie_text: "We use cookies to enhance your browsing experience.", btn_accept: "Accept", btn_decline: "Decline", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
-            },
-            ru: {
-                nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
-                proj_title: "Инженерный Вклад", proj_subtitle: "Избранные промышленные кейсы высокоточного моделирования.",
-                lbl_challenge: "Вызов", lbl_solution: "Решение", lbl_impact: "Результат",
-                tag_aero: "Аэрокосмос", tag_data: "Data Science", tag_process: "Нефтегаз",
-                p1_title: "Термоупругая Оптимизация Турбин", p1_chal: "Прогноз рисков отказа лопаток турбин при экстремальных нагрузках (10k+ об/мин).", p1_sol: "Разработана сопряженная FEM модель с адаптивной сеткой (~1 млн степеней свободы).", p1_imp: "Сходимость <10 мин. Сокращение циклов прототипирования на 40%.",
-                p2_title: "Картирование Рисков Здоровья", p2_chal: "Стандартные 2D графики не выявляли скрытые корреляции в сложных медицинских данных.", p2_sol: "Внедрен ИИ-пайплайн с использованием UMAP и 3D аппроксимации поверхностей.", p2_imp: "Выявлены скрытые кластеры высокого риска, невидимые традиционными методами.",
-                p3_title: "Цифровой Двойник Дозирования", p3_chal: "Предотвращение коррозии и неравномерного дозирования метанола в газопроводах.", p3_sol: "Создан полный 3D Цифровой Двойник станции дозирования (12x3x4 м).", p3_imp: "Оптимизирована безопасность и эффективность. Виртуальный испытательный стенд.",
-                cookie_title: "Конфиденциальность", cookie_text: "Мы используем cookies для улучшения работы сайта.", btn_accept: "Принять", btn_decline: "Отклонить", footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
-            },
-            it: {
-                nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
-                proj_title: "Impatto Ingegneristico", proj_subtitle: "Casi di studio industriali selezionati che dimostrano simulazioni ad alta fedeltà.",
-                lbl_challenge: "Sfida", lbl_solution: "Soluzione", lbl_impact: "Impatto",
-                tag_aero: "Aerospaziale", tag_data: "Data Science", tag_process: "Industria di Processo",
-                p1_title: "Ottimizzazione Termoelastica", p1_chal: "Previsione dei rischi di guasto nelle pale delle turbine sotto carichi termici estremi.", p1_sol: "Sviluppato un modello FEM termo-strutturale accoppiato con meshing adattivo.", p1_imp: "Convergenza in <10 minuti. Cicli di prototipazione ridotti del 40%.",
-                p2_title: "Mappatura dei Rischi Sanitari", p2_chal: "I grafici 2D standard non riuscivano a rivelare correlazioni nascoste in dataset complessi.", p2_sol: "Implementata una pipeline guidata dall'IA utilizzando UMAP e fitting 3D.", p2_imp: "Identificati cluster ad alto rischio nascosti invisibili ai metodi tradizionali.",
-                p3_title: "Digital Twin per il Dosaggio", p3_chal: "Prevenzione della corrosione e del dosaggio irregolare nei sistemi di iniezione di metanolo.", p3_sol: "Creato un Digital Twin 3D completo del rifugio di dosaggio (12x3x4m).", p3_imp: "Layout ottimizzato per sicurezza ed efficienza. Fornito un banco di prova virtuale.",
-                cookie_title: "Privacy & Esperienza", cookie_text: "Utilizziamo i cookie per migliorare la tua esperienza.", btn_accept: "Accetta", btn_decline: "Rifiuta", footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
-            }
-        };
-
-        function setLanguage(lang) {
-            localStorage.setItem('preferredLanguage', lang);
-            const elements = document.querySelectorAll('[data-key]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (translations[lang][key]) el.innerHTML = translations[lang][key];
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const btnText = lang.toUpperCase();
-            const activeBtn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent === btnText);
-            if (activeBtn) activeBtn.classList.add('active');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            setLanguage(savedLang);
-            if (!localStorage.getItem("cookieConsent")) setTimeout(() => { document.getElementById("cookie-banner").style.display = "block"; }, 1000);
-        });
-        function acceptCookies() { localStorage.setItem("cookieConsent", "accepted"); document.getElementById("cookie-banner").style.display = "none"; }
-        function declineCookies() { localStorage.setItem("cookieConsent", "declined"); document.getElementById("cookie-banner").style.display = "none"; }
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('active');else entry.target.classList.remove('active');});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+        const translations={en:{nav_home:"Home",nav_projects:"Projects",nav_research:"Research",nav_insights:"Insights",nav_contact:"Contact",proj_title:"Engineering Impact",proj_subtitle:"Selected industrial case studies demonstrating high-fidelity simulation.",lbl_challenge:"Challenge",lbl_solution:"Solution",lbl_impact:"Impact",tag_aero:"Aerospace",tag_data:"Data Science",tag_process:"Process Industry",p1_title:"Thermoelastic Turbine Optimization",p1_chal:"Predicting failure risks in turbine blades under extreme thermal loads (10k+ RPM).",p1_sol:"Developed a coupled thermal-structural FEM model with adaptive meshing (~1M DoF).",p1_imp:"Achieved convergence in <10 minutes. Reduced prototype cycles by 40%.",p2_title:"Multivariate Health Risk Mapping",p2_chal:"Standard 2D charts failed to reveal hidden correlations in complex patient datasets.",p2_sol:"Implemented an AI-driven pipeline using manifold learning (UMAP) and 3D statistical surface fitting.",p2_imp:"Identified hidden high-risk clusters invisible to traditional methods.",p3_title:"Digital Twin for Chemical Dosing",p3_chal:"Preventing corrosion and uneven dosing in methanol injection systems.",p3_sol:"Created a full 3D Digital Twin of the dosing shelter (12x3x4m) to simulate fluid flow.",p3_imp:"Optimized layout for safety and efficiency. Delivered a virtual testbed.",footer_privacy:"Privacy Policy",footer_terms:"Terms of Service"},ru:{nav_home:"Главная",nav_projects:"Проекты",nav_research:"Наука",nav_insights:"Инсайты",nav_contact:"Контакты",proj_title:"Инженерный Вклад",proj_subtitle:"Избранные промышленные кейсы высокоточного моделирования.",lbl_challenge:"Вызов",lbl_solution:"Решение",lbl_impact:"Результат",tag_aero:"Аэрокосмос",tag_data:"Data Science",tag_process:"Нефтегаз",p1_title:"Термоупругая Оптимизация Турбин",p1_chal:"Прогноз рисков отказа лопаток турбин при экстремальных нагрузках (10k+ об/мин).",p1_sol:"Разработана сопряженная FEM модель с адаптивной сеткой (~1 млн степеней свободы).",p1_imp:"Сходимость <10 мин. Сокращение циклов прототипирования на 40%.",p2_title:"Картирование Рисков Здоровья",p2_chal:"Стандартные 2D графики не выявляли скрытые корреляции в сложных медицинских данных.",p2_sol:"Внедрен ИИ-пайплайн с использованием UMAP и 3D аппроксимации поверхностей.",p2_imp:"Выявлены скрытые кластеры высокого риска, невидимые традиционными методами.",p3_title:"Цифровой Двойник Дозирования",p3_chal:"Предотвращение коррозии и неравномерного дозирования метанола в газопроводах.",p3_sol:"Создан полный 3D Цифровой Двойник станции дозирования (12x3x4 м).",p3_imp:"Оптимизирована безопасность и эффективность. Виртуальный испытательный стенд.",footer_privacy:"Политика конфиденциальности",footer_terms:"Условия использования"},it:{nav_home:"Home",nav_projects:"Progetti",nav_research:"Ricerca",nav_insights:"Approfondimenti",nav_contact:"Contatti",proj_title:"Impatto Ingegneristico",proj_subtitle:"Casi di studio industriali selezionati che dimostrano simulazioni ad alta fedeltà.",lbl_challenge:"Sfida",lbl_solution:"Soluzione",lbl_impact:"Impatto",tag_aero:"Aerospaziale",tag_data:"Data Science",tag_process:"Industria di Processo",p1_title:"Ottimizzazione Termoelastica",p1_chal:"Previsione dei rischi di guasto nelle pale delle turbine sotto carichi termici estremi.",p1_sol:"Sviluppato un modello FEM termo-strutturale accoppiato con meshing adattivo.",p1_imp:"Convergenza in <10 minuti. Cicli di prototipazione ridotti del 40%.",p2_title:"Mappatura dei Rischi Sanitari",p2_chal:"I grafici 2D standard non riuscivano a rivelare correlazioni nascoste in dataset complessi.",p2_sol:"Implementata una pipeline guidata dall'IA utilizzando UMAP e fitting 3D.",p2_imp:"Identificati cluster ad alto rischio nascosti invisibili ai metodi tradizionali.",p3_title:"Digital Twin per il Dosaggio",p3_chal:"Prevenzione della corrosione e del dosaggio irregolare nei sistemi di iniezione di metanolo.",p3_sol:"Creato un Digital Twin 3D completo del rifugio di dosaggio (12x3x4m).",p3_imp:"Layout ottimizzato per sicurezza ed efficienza. Fornito un banco di prova virtuale.",footer_privacy:"Privacy Policy",footer_terms:"Termini di Servizio"}};
+        function setLanguage(lang){localStorage.setItem('preferredLanguage',lang);const elements=document.querySelectorAll('[data-key]');elements.forEach(el=>{const key=el.getAttribute('data-key');if(translations[lang][key])el.innerHTML=translations[lang][key];});document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'));const btnText=lang.toUpperCase();const activeBtn=Array.from(document.querySelectorAll('.lang-btn')).find(b=>b.textContent===btnText);if(activeBtn)activeBtn.classList.add('active');}
+        document.addEventListener('DOMContentLoaded',()=>{const savedLang=localStorage.getItem('preferredLanguage')||'en';setLanguage(savedLang);});
     </script>
-
 </body>
 </html>
