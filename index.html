@@ -8,6 +8,8 @@
     <link rel="icon" href="Log.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -31,7 +33,7 @@
                 <a href="insights.html" data-key="nav_insights">Insights</a>
                 <a href="contact.html" class="contact-btn" data-key="nav_contact">Contact</a>
                 <div class="lang-switcher">
-                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
                     <span class="lang-divider">|</span>
                     <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
                     <span class="lang-divider">|</span>
@@ -122,20 +124,23 @@
             <p style="color: #9aa0a6; margin-top: 15px;" data-key="wp_text">
                 Avoid costly implementation mistakes. Download our executive guide on how to prepare your data for high-fidelity AI-simulation.
             </p>
-            <!-- Добавлен target="_blank" для открытия PDF в новой вкладке -->
-            <form action="https://formspree.io/f/xykgvnnr" method="POST" class="magnet-form" target="_blank">
+            
+            <!-- JS handled form -->
+            <form id="magnet-form" action="https://formspree.io/f/xykgvnnr" method="POST" class="magnet-form">
                 <input type="email" name="email" class="email-input" placeholder="Enter your corporate email" required>
-                <input type="hidden" name="_next" value="https://siviwconsulting.github.io/whitepaper.pdf">
                 <button type="submit" class="btn btn-primary" data-key="wp_btn">Download Whitepaper</button>
             </form>
+            <p id="form-status" style="margin-top: 10px; font-size: 0.9rem;"></p>
         </div>
     </section>
 
+    <!-- FIXED FLOATING BUTTON -->
     <a href="#lead-magnet" class="floating-report-btn">
         <i class="fa-solid fa-file-arrow-down"></i>
         <span class="floating-text">Get Report</span>
     </a>
 
+    <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-title">
             <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
@@ -246,7 +251,48 @@
         });
         function acceptCookies() { localStorage.setItem("cookieConsent", "accepted"); document.getElementById("cookie-banner").style.display = "none"; }
         function declineCookies() { localStorage.setItem("cookieConsent", "declined"); document.getElementById("cookie-banner").style.display = "none"; }
-    </script>
 
+        // FORM HANDLING
+        const form = document.getElementById("magnet-form");
+        if(form) {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                const formData = new FormData(form);
+                const button = form.querySelector('button');
+                const originalText = button.textContent;
+                const status = document.getElementById("form-status"); // Если такого элемента нет, создайте его в HTML
+                
+                button.textContent = "Sending...";
+                button.disabled = true;
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        form.reset();
+                        // FORCE DOWNLOAD
+                        const link = document.createElement('a');
+                        link.href = 'whitepaper.pdf';
+                        link.download = 'whitepaper.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        button.textContent = "Downloaded!";
+                    } else {
+                        alert("Oops! There was a problem.");
+                    }
+                }).catch(error => {
+                    alert("Oops! There was a problem.");
+                }).finally(() => {
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    }, 3000);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
