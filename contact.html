@@ -7,8 +7,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <style>
+        .executive-card {
+            border: 1px solid #d4af37 !important;
+            background: rgba(20, 24, 29, 0.95) !important;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.15) !important;
+        }
+        /* Стили для карты */
+        .map-container {
+            width: 100%;
+            height: 180px;
+            margin-top: 30px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            filter: grayscale(100%) invert(90%) contrast(120%); /* Темный стиль карты */
+        }
+    </style>
 </head>
 <body>
 
@@ -30,7 +47,7 @@
                 <a href="research.html" data-key="nav_research">Research</a>
                 <a href="contact.html" class="active" data-key="nav_contact">Contact</a>
                 <div class="lang-switcher">
-                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
                     <span class="lang-divider">|</span>
                     <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
                     <span class="lang-divider">|</span>
@@ -42,34 +59,91 @@
 
     <section class="contact-section fade-in">
         <div class="executive-card reveal">
+            
             <div class="card-visual">
                 <div class="img-container">
                     <img src="profpic1.jpg" alt="Artem Sinitsa" class="primary-img">
                     <img src="profpic2.jpg" alt="Artem Sinitsa" class="hover-img">
                 </div>
+                
+                <!-- Встроенная карта (Темный стиль через CSS фильтр) -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89660.34757963385!2d13.759929!3d45.657577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b6b06e4d5668d%3A0x6b4f733d0b23f23!2sTrieste%2C%20Province%20of%20Trieste%2C%20Italy!5e0!3m2!1sen!2s!4v1625634563456!5m2!1sen!2s" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
+
             <div class="card-details">
                 <div class="card-header">
                     <h1>Artem V. Sinitsa, <span class="degree">PhD</span></h1>
                     <h2 data-key="role">Founder & Lead Consultant</h2>
                     <div class="gold-divider"></div>
                 </div>
+
                 <div class="contact-list">
-                    <div class="contact-item"><div class="icon-box"><i class="fa-solid fa-location-dot"></i></div><div class="info-text"><span class="label" data-key="headquarters_label">Headquarters</span><span class="value" data-key="headquarters_val">Trieste, Italy</span></div></div>
-                    <a href="mailto:siviwconsulting@gmail.com" class="contact-item link-item"><div class="icon-box"><i class="fa-solid fa-envelope"></i></div><div class="info-text"><span class="label" data-key="email_label">Email</span><span class="value">siviwconsulting@gmail.com</span></div></a>
-                    <a href="tel:+393514955238" class="contact-item link-item"><div class="icon-box"><i class="fa-solid fa-phone"></i></div><div class="info-text"><span class="label" data-key="phone_label">Phone</span><span class="value">+39 351 495 52 38</span></div></a>
-                    <a href="https://siviwconsulting.github.io" class="contact-item link-item"><div class="icon-box"><i class="fa-solid fa-globe"></i></div><div class="info-text"><span class="label" data-key="website_label">Website</span><span class="value">siviwconsulting.github.io</span></div></a>
-                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="contact-item link-item"><div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div><div class="info-text"><span class="label" data-key="linkedin_label">LinkedIn</span><span class="value">Siviw Consulting</span></div></a>
+                    
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <span class="label" data-key="headquarters_label">Headquarters</span>
+                            <span class="value" data-key="headquarters_val">Trieste, Friuli-Venezia Giulia, Italy</span>
+                        </div>
+                    </div>
+
+                    <a href="mailto:siviwconsulting@gmail.com" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-text">
+                            <span class="label" data-key="email_label">Email Inquiries</span>
+                            <span class="value">siviwconsulting@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+393514955238" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <span class="label" data-key="phone_label">Direct Line</span>
+                            <span class="value">+39 351 495 52 38</span>
+                        </div>
+                    </a>
+
+                    <a href="https://siviwconsulting.github.io" target="_blank" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+                        <div class="info-text">
+                            <span class="label" data-key="website_label">Official Website</span>
+                            <span class="value">siviwconsulting.github.io</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="contact-item link-item">
+                        <div class="icon-box"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <div class="info-text">
+                            <span class="label" data-key="linkedin_label">Professional Network</span>
+                            <span class="value">Siviw Consulting</span>
+                        </div>
+                    </a>
                 </div>
+
                 <div class="card-footer">
-                    <div class="vat-info"><span class="vat-label">P.IVA:</span><span class="vat-value">01437440322</span></div>
-                    <button class="btn btn-book" onclick="openCalendly()" data-key="btn_book">Book Discovery Call</button>
+                    <div class="vat-info">
+                        <span class="vat-label">P.IVA / VAT ID:</span>
+                        <span class="vat-value">01437440322</span>
+                    </div>
+                    
+                    <!-- Кнопка теперь работает как ссылка (надежнее) + JS вызов -->
+                    <a href="https://calendly.com/siviwconsulting" 
+                       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/siviwconsulting'});return false;" 
+                       class="btn btn-book" 
+                       data-key="btn_book">
+                       Book Discovery Call
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cookie Banner -->
+    <!-- Cookie Banner (Same as index) -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-title">
             <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
@@ -106,30 +180,26 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        function openCalendly() {
-            Calendly.initPopupWidget({ url: 'https://calendly.com/siviwconsulting' });
-            return false;
-        }
-
+        // --- TRANSLATIONS ---
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
-                role: "Founder & Lead Consultant", headquarters_label: "Headquarters", headquarters_val: "Trieste, Italy",
-                email_label: "Email", phone_label: "Phone", website_label: "Website", linkedin_label: "LinkedIn",
+                role: "Founder & Lead Consultant", headquarters_label: "Headquarters", headquarters_val: "Trieste, Friuli-Venezia Giulia, Italy",
+                email_label: "Email Inquiries", phone_label: "Direct Line", website_label: "Official Website", linkedin_label: "Professional Network",
                 btn_book: "Book Discovery Call", cta_btn: "Initiate Collaboration",
                 cookie_title: "Privacy & Experience", cookie_text: "We use cookies to enhance your browsing experience.", btn_accept: "Accept", btn_decline: "Decline", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
             },
             ru: {
                 nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
-                role: "Основатель и Ведущий Консультант", headquarters_label: "Офис", headquarters_val: "Триест, Италия",
-                email_label: "Email", phone_label: "Телефон", website_label: "Сайт", linkedin_label: "LinkedIn",
+                role: "Основатель и Ведущий Консультант", headquarters_label: "Офис / Штаб-квартира", headquarters_val: "Триест, Фриули-Венеция-Джулия, Италия",
+                email_label: "Email для связи", phone_label: "Прямой номер", website_label: "Официальный сайт", linkedin_label: "Профиль LinkedIn",
                 btn_book: "Забронировать звонок", cta_btn: "Начать сотрудничество",
                 cookie_title: "Конфиденциальность", cookie_text: "Мы используем cookies для улучшения работы сайта.", btn_accept: "Принять", btn_decline: "Отклонить", footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
             },
             it: {
                 nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
-                role: "Fondatore e Consulente Capo", headquarters_label: "Sede", headquarters_val: "Trieste, Italia",
-                email_label: "Email", phone_label: "Telefono", website_label: "Sito Web", linkedin_label: "LinkedIn",
+                role: "Fondatore e Consulente Capo", headquarters_label: "Sede Centrale", headquarters_val: "Trieste, Friuli-Venezia Giulia, Italia",
+                email_label: "Richieste via Email", phone_label: "Linea Diretta", website_label: "Sito Ufficiale", linkedin_label: "Rete Professionale",
                 btn_book: "Prenota una Chiamata", cta_btn: "Iniziare la Collaborazione",
                 cookie_title: "Privacy & Esperienza", cookie_text: "Utilizziamo i cookie per migliorare la tua esperienza.", btn_accept: "Accetta", btn_decline: "Rifiuta", footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
             }
