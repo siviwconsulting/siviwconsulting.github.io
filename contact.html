@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Log.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
 
@@ -62,15 +64,34 @@
                 </div>
                 <div class="card-footer">
                     <div class="vat-info"><span class="vat-label">P.IVA:</span><span class="vat-value">01437440322</span></div>
-                    <a href="mailto:siviwconsulting@gmail.com" class="btn btn-primary" data-key="cta_btn">Initiate Collaboration</a>
+                    
+                    <!-- Кнопка с вызовом Calendly -->
+                    <button class="btn btn-book" onclick="openCalendly()" data-key="btn_book">Book Discovery Call</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Cookie Banner (Same as index) -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-title">
+            <i class="fa-solid fa-cookie-bite" style="color: #d4af37;"></i> 
+            <span data-key="cookie_title">Privacy & Experience</span>
+        </div>
+        <div class="cookie-text" data-key="cookie_text">We use cookies to enhance your browsing experience.</div>
+        <div class="cookie-actions">
+            <button class="btn-decline" onclick="declineCookies()" data-key="btn_decline">Decline</button>
+            <button class="btn-accept" onclick="acceptCookies()" data-key="btn_accept">Accept</button>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Sinitsa VitaWare Consulting. Trieste, Italy.</p>
+            <div class="footer-links">
+                <a href="#" data-key="footer_privacy">Privacy Policy</a> | 
+                <a href="#" data-key="footer_terms">Terms of Service</a>
+            </div>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/company/siviw-consulting" target="_blank" class="social-icon">
                     <img src="LinkedIn_2021.svg.png" alt="LinkedIn">
@@ -88,21 +109,33 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // CALENDLY FUNCTION
+        function openCalendly() {
+            Calendly.initPopupWidget({ url: 'https://calendly.com/' }); // ЗАМЕНИТЕ НА СВОЮ ССЫЛКУ!
+            return false;
+        }
+
         const translations = {
             en: {
                 nav_home: "Home", nav_projects: "Projects", nav_research: "Research", nav_contact: "Contact",
                 role: "Founder & Lead Consultant", headquarters_label: "Headquarters", headquarters_val: "Trieste, Italy",
-                email_label: "Email", phone_label: "Phone", website_label: "Website", linkedin_label: "LinkedIn", cta_btn: "Initiate Collaboration"
+                email_label: "Email", phone_label: "Phone", website_label: "Website", linkedin_label: "LinkedIn",
+                btn_book: "Book Discovery Call",
+                cookie_title: "Privacy & Experience", cookie_text: "We use cookies to enhance your browsing experience.", btn_accept: "Accept", btn_decline: "Decline", footer_privacy: "Privacy Policy", footer_terms: "Terms of Service"
             },
             ru: {
                 nav_home: "Главная", nav_projects: "Проекты", nav_research: "Наука", nav_contact: "Контакты",
                 role: "Основатель и Ведущий Консультант", headquarters_label: "Офис", headquarters_val: "Триест, Италия",
-                email_label: "Email", phone_label: "Телефон", website_label: "Сайт", linkedin_label: "LinkedIn", cta_btn: "Начать сотрудничество"
+                email_label: "Email", phone_label: "Телефон", website_label: "Сайт", linkedin_label: "LinkedIn",
+                btn_book: "Забронировать звонок",
+                cookie_title: "Конфиденциальность", cookie_text: "Мы используем cookies для улучшения работы сайта.", btn_accept: "Принять", btn_decline: "Отклонить", footer_privacy: "Политика конфиденциальности", footer_terms: "Условия использования"
             },
             it: {
                 nav_home: "Home", nav_projects: "Progetti", nav_research: "Ricerca", nav_contact: "Contatti",
                 role: "Fondatore e Consulente Capo", headquarters_label: "Sede", headquarters_val: "Trieste, Italia",
-                email_label: "Email", phone_label: "Telefono", website_label: "Sito Web", linkedin_label: "LinkedIn", cta_btn: "Iniziare Collaborazione"
+                email_label: "Email", phone_label: "Telefono", website_label: "Sito Web", linkedin_label: "LinkedIn",
+                btn_book: "Prenota una Chiamata",
+                cookie_title: "Privacy & Esperienza", cookie_text: "Utilizziamo i cookie per migliorare la tua esperienza.", btn_accept: "Accetta", btn_decline: "Rifiuta", footer_privacy: "Privacy Policy", footer_terms: "Termini di Servizio"
             }
         };
 
@@ -122,7 +155,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
             setLanguage(savedLang);
+            if (!localStorage.getItem("cookieConsent")) setTimeout(() => { document.getElementById("cookie-banner").style.display = "block"; }, 1000);
         });
+        function acceptCookies() { localStorage.setItem("cookieConsent", "accepted"); document.getElementById("cookie-banner").style.display = "none"; }
+        function declineCookies() { localStorage.setItem("cookieConsent", "declined"); document.getElementById("cookie-banner").style.display = "none"; }
     </script>
 
 </body>
